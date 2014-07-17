@@ -17,52 +17,23 @@
  */
 
 var React = require('react');
-var GridItem = require('./GridItem.react.js');
 
 
 var Header = React.createClass({
 
-  rowCount: 12,
-  colCount: 12,
-
-  initGrid: function () {
-    this.rowElems = {
-      num: 0,
-      items: []
-    };
-
-    this.buildGrid();
-  },
-
-  buildGrid: function () {
-    for (var i = 0; i < this.props.rowCount; ++i) {
-      this.addRow();
-    }
-  },
-
-  addRow: function () {
-    this.rowElems.items.push(this.buildRow());
-
-    this.rows.push(<GridRow items={this.rowlElems.items} />)
-
-    return this.rowElems;
-  },
-
-  buildRow: function (row, col) {
-    row = row || [];
-    col = col || 0;
-
-    if (col === this.colCount) { return row; }
-
-    row.push(<GridItem row={this.rowElems.num} col={col} />);
-
-    return this.buildRows(row, col + 1);
-  },
-
+  /**
+   * @return {object}
+   */
   render: function() {
-
     return (
+      <header id="header">
         <h1>todos</h1>
+        <TodoTextInput
+          id="new-todo"
+          placeholder="What needs to be done?"
+          onSave={this._onSave}
+        />
+      </header>
     );
   },
 
