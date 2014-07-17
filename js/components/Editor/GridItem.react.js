@@ -19,12 +19,15 @@
 var React = require('react');
 
 
-var Header = React.createClass({
+var GridItem = React.createClass({
 
   propTypes: {},
 
   getInitialState: function () {
-    return { highlighted: false }
+    return { 
+      highlighted: false,
+      active: false
+    };
   },
 
   render: function() {
@@ -33,8 +36,7 @@ var Header = React.createClass({
       width: "119px",
       height: "119px",
       display: "inline-block",
-      "margin-top": "-5px;",
-      "background-color": "white"
+      "margin-top": "-5px;"
     };
 
     if (this.state.highlighted) {
@@ -61,6 +63,12 @@ var Header = React.createClass({
     this.forceUpdate();
   },
 
+  highlight: function () {
+    this.state.highlighted = true;
+    this.forceUpdate();
+  },
+
+
 });
 
-module.exports = Header;
+module.exports = GridItem;

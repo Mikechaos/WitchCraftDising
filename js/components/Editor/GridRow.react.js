@@ -20,15 +20,20 @@ var React = require('react');
 var GridItem = require('./GridItem.react.js');
 
 
-var Header = React.createClass({
+var GridRow = React.createClass({
 
   render: function() {
-    debugger;
     return (
       <div className={"grid-row"}>{this.props.items}</div>
     );
+  },
+
+  highlightItems: function (start, end) {
+    for (var i = start; i <= end; ++i) {
+      this.props.items[i].highlight();
+    }
   }
 
 });
 
-module.exports = Header;
+module.exports = GridRow;

@@ -17,6 +17,7 @@
  */
 
 var React = require('react');
+var _ = require('underscore');
 var GridItem = require('./GridItem.react.js');
 var GridRow = require('./GridRow.react.js');
 
@@ -25,6 +26,16 @@ var Header = React.createClass({
 
   rowCount: 12,
   colCount: 12,
+
+  getInitialState: function () {
+    return {
+      dragging: false,
+      origin: {
+        row: 0,
+        col: 0
+      }
+    };
+  },
 
   initGrid: function () {
     this.rowElems = {
@@ -43,10 +54,8 @@ var Header = React.createClass({
   },
 
   addRow: function () {
-    this.rowElems.items.push(this.buildRow());
+    this.rowElems.items = this.buildRow();
     this.rows.push(<GridRow items={this.rowElems.items} />)
-
-    this.rowElems.items = [];
   },
 
   buildRow: function (row, col) {
@@ -62,12 +71,55 @@ var Header = React.createClass({
 
   render: function() {
     this.initGrid();
-    debugger;
+    var style = {
+      "background-color": "white"
+    }
     return (
-        <div>{this.rows}</div>
+        <div id={"test"} style={style} onMouseDown={this.startDragging} onMouseUp={this.stopDragging}>{this.rows}</div>
     );
   },
 
+  startDragging: function () {
+    this.state.dragging = true;
+    this.state.origin = this.findActiveItem();
+    this.startInterval();
+  },
+
+  startInterval: function () {
+    var interval = setInterval(_.bind(function () {
+      var active = this.findActiveItem();
+      this.calculateRect(active);
+      if (this.state.dragging === false) {
+        clearInterval(interval);
+      }
+    }, this), 100)
+  },
+
+  findActiveItem: function () {
+    var found = false;
+    for (var i = 0; i < this.rows.length; ++i) {
+      if (found !== false) { break; }
+      for (var j = 0; j < this.colCount; ++j) {
+        if (this.getItem(i, j).state.active) { found = {row: i, col: j}; break; }
+      }
+    }
+    return found;
+  },
+
+  getItem: function (row, col) {
+    return this.rows[row].props.items[col];
+  },
+
+  calculateRect: function (active) {
+    for (var i = this.state.origin.row; i <= active.row; ++i) {
+      this.rows[i].highlightItems(this.state.origin.col, active.col);
+    }
+   // this.getItem(active.row, active.col).toggleSelect();
+  },
+
+  stopDragging: function () {
+    this.state.dragging = false;
+  },
   /**
    * Event handler called within TodoTextInput.
    * Defining this here allows TodoTextInput to be used in multiple places
