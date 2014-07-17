@@ -50,9 +50,10 @@ var TodoApp = React.createClass({
    * @return {object}
    */
   render: function() {
-    var
   	return (
-      <div class=""> </div>
+      <div>
+        test
+      </div>
   	);
   },
 
