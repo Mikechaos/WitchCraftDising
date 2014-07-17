@@ -111,8 +111,22 @@ var Header = React.createClass({
   },
 
   calculateRect: function (active) {
-    for (var i = this.state.origin.row; i <= active.row; ++i) {
-      this.rows[i].highlightItems(this.state.origin.col, active.col);
+    if (this.state.origin.row > active.row) {
+      for (var i = this.state.origin.row; i >= active.row; --i) {
+        if (this.state.origin.col > active.col) {
+          this.rows[i].highlightItemsReverse(this.state.origin.col, active.col);
+        } else {
+          this.rows[i].highlightItems(this.state.origin.col, active.col);
+        }
+      }
+    } else {
+      for (var i = this.state.origin.row; i <= active.row; ++i) {
+        if (this.state.origin.col > active.col) {
+          this.rows[i].highlightItemsReverse(this.state.origin.col, active.col);
+        } else {
+          this.rows[i].highlightItems(this.state.origin.col, active.col);
+        }
+      }
     }
    // this.getItem(active.row, active.col).toggleSelect();
   },

@@ -32,6 +32,12 @@ var GridRow = React.createClass({
     for (var i = start; i <= end; ++i) {
       this.props.items[i].highlight();
     }
+  },
+
+  highlightItemsReverse: function (start, end) {
+    for (var i = start; i >= end; --i) {
+      this.props.items[i].highlight();
+    }
   }
 
 });
