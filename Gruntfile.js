@@ -6,13 +6,17 @@ module.exports = function(grunt) {
       index: '.'
     },
     browserify: {
+      
       dev: {
         files: {
           '<%= paths.index %>/js/bundle.js': ['<%= paths.index %>/js/app.js'],
         },
+
         options: {
           transform: ['reactify'],
-          debug: true
+          bundleOptions : {
+            debug: true 
+          },
         }
       }
     },
