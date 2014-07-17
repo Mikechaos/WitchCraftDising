@@ -21,25 +21,45 @@ var React = require('react');
 
 var Header = React.createClass({
 
-
   propTypes: {},
 
-  /**
-   * @return {object}
-   */
+  getInitialState: function () {
+    return { highlighted: false }
+  },
+
   render: function() {
     borderStyle = {
       border: "solid grey 1px",
       width: "119px",
       height: "119px",
       display: "inline-block",
-      "margin-top": "-5px;"
+      "margin-top": "-5px;",
+      "background-color": "white"
     };
 
+    if (this.state.highlighted) {
+      borderStyle.border = "solid pink 1px";
+    }
+
     return (
-      <div style={borderStyle}></div>
+      <div style={borderStyle} onMouseEnter={this.setActive} onMouseLeave={this.setInactive}></div>
     );
-  }
+  },
+
+  setActive: function () {
+    this.state.active = true;
+    console.log(this.props, this.state);
+  },
+
+  setInactive: function () {
+    this.state.active = false;
+    console.log(this.props, this.state);
+  },
+
+  toggleSelect: function () {
+    this.state.highlighted = !this.state.highlighted;
+    this.forceUpdate();
+  },
 
 });
 

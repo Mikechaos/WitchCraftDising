@@ -38,12 +38,12 @@ var Header = React.createClass({
   buildGrid: function () {
     for (var i = 0; i < this.rowCount; ++i) {
       this.addRow();
+      ++this.rowElems.num;
     }
   },
 
   addRow: function () {
     this.rowElems.items.push(this.buildRow());
-
     this.rows.push(<GridRow items={this.rowElems.items} />)
 
     this.rowElems.items = [];
