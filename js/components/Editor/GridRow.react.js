@@ -23,9 +23,9 @@ var GridItem = require('./GridItem.react.js');
 var Header = React.createClass({
 
   render: function() {
-
+    debugger;
     return (
-      <div class="grid-row">{this.props.items}</div>
+      <div className={"grid-row"}>{this.props.items}</div>
     );
   }
 

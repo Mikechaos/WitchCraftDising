@@ -18,6 +18,7 @@
 
 var React = require('react');
 var GridItem = require('./GridItem.react.js');
+var GridRow = require('./GridRow.react.js');
 
 
 var Header = React.createClass({
@@ -30,12 +31,12 @@ var Header = React.createClass({
       num: 0,
       items: []
     };
-
+    this.rows = [];
     this.buildGrid();
   },
 
   buildGrid: function () {
-    for (var i = 0; i < this.props.rowCount; ++i) {
+    for (var i = 0; i < this.rowCount; ++i) {
       this.addRow();
     }
   },
@@ -43,9 +44,9 @@ var Header = React.createClass({
   addRow: function () {
     this.rowElems.items.push(this.buildRow());
 
-    this.rows.push(<GridRow items={this.rowlElems.items} />)
+    this.rows.push(<GridRow items={this.rowElems.items} />)
 
-    return this.rowElems;
+    this.rowElems.items = [];
   },
 
   buildRow: function (row, col) {
@@ -56,13 +57,14 @@ var Header = React.createClass({
 
     row.push(<GridItem row={this.rowElems.num} col={col} />);
 
-    return this.buildRows(row, col + 1);
+    return this.buildRow(row, col + 1);
   },
 
   render: function() {
-
+    this.initGrid();
+    debugger;
     return (
-        <h1>todos</h1>
+        <div>{this.rows}</div>
     );
   },
 

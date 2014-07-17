@@ -28,10 +28,19 @@ var Header = React.createClass({
    * @return {object}
    */
   render: function() {
+    borderStyle = {
+      border: "solid grey 1px",
+      width: "119px",
+      height: "119px",
+      display: "inline-block",
+      "margin-top": "-5px;"
+    };
+
     return (
-      <div style="border: solid grey 1px;"></div>
+      <div style={borderStyle}></div>
     );
   }
+
 });
 
 module.exports = Header;
