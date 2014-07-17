@@ -27,94 +27,94 @@ var CHANGE_EVENT = 'change';
 
 var _componentStore = new Backbone.Model({
 	defaults : {
-	id:908239048,
-	title:"shoes",
-	items:[{
-		type:"product"
-		id:768930,
-		positions:{
-			top:2,
-			left:5
-		}
-		size:{
-			width:4,
-			height:10
-		}
-	},
-	{
-		type:"image"
-		url:"http://www.ssense.com",
-		src:"http://www.ssense.com/images/whatever.png",
-		positions:{
-			top:2,
-			left:5
-		}
-		size:{
-			width:4,
-			height:10
-		}
-	},
-	{
-		type:"image_title"
-		url:"http://www.ssense.com",
-		title:"We are the best",
-		src:"http://www.ssense.com/images/whatever.png",
-		custom_css:"<style>.whatever{display:none;}</style>",
-		positions:{
-			top:2,
-			left:5
-		}
-		size:{
-			width:4,
-			height:10
-		}
-	},
-	{
-		type:"image_text"
-		url:"http://www.ssense.com",
-		title:"We are the best",
-		src:"http://www.ssense.com/images/whatever.png",
-		custom_css:"#432423423 {display:none;}</style>",
-		positions:{
-			top:2,
-			left:5
-		}
-		size:{
-			width:4,
-			height:10
-		}
-	},
-	{
-		type:"image_text"
-		url:"http://www.ssense.com",
-		title:"We are the best",
-		src:"http://www.ssense.com/images/whatever.png",
-		custom_css:"<style>.whatever{display:none;}</style>",
-		positions:{
-			top:2,
-			left:5
-		}
-		size:{
-			width:4,
-			height:10
-		}
+		id:908239048,
+		title:"shoes",
+		items:[{
+			type:"product",
+			id:768930,
+			positions:{
+				top:2,
+				left:5
+			},
+			size:{
+				width:4,
+				height:10
+			}
+		},
+		{
+			type:"image",
+			url:"www.ssense.com",
+			src:"www.ssense.com/images/whatever.png",
+			positions:{
+				top:2,
+				left:5
+			},
+			size:{
+				width:4,
+				height:10
+			}
+		},
+		{
+			type:"image_title",
+			url:"http://www.ssense.com",
+			title:"We are the best",
+			src:"http://www.ssense.com/images/whatever.png",
+			custom_css:"<style>.whatever{display:none;}</style>",
+			positions:{
+				top:2,
+				left:5
+			},
+			size:{
+				width:4,
+				height:10
+			}
+		},
+		{
+			type:"image_text",
+			url:"http://www.ssense.com",
+			title:"We are the best",
+			src:"http://www.ssense.com/images/whatever.png",
+			custom_css:"#432423423 {display:none;}</style>",
+			positions:{
+				top:2,
+				left:5
+			},
+			size:{
+				width:4,
+				height:10
+			}
+		},
+		{
+			type:"image_text",
+			url:"http://www.ssense.com",
+			title:"We are the best",
+			src:"http://www.ssense.com/images/whatever.png",
+			custom_css:"<style>.whatever{display:none;}</style>",
+			positions:{
+				top:2,
+				left:5
+			},
+			size:{
+				width:4,
+				height:10
+			}
+		},
+		{
+			type:"text",
+			url:"http://www.ssense.com",
+			title:"We are the best",
+			desc:"this is a desc",
+			custom_css:"<style>.whatever{display:none;}</style>",
+			positions:{
+				top:2,
+				left:5
+			},
+			size:{
+				width:4,
+				height:10
+			}
+		}]
 	}
-	{
-		type:"text"
-		url:"http://www.ssense.com",
-		title:"We are the best",
-		desc:"this is a desc",
-		custom_css:"<style>.whatever{display:none;}</style>",
-		positions:{
-			top:2,
-			left:5
-		}
-		size:{
-			width:4,
-			height:10
-		}
-	}]
-}
 });
 
 /**
