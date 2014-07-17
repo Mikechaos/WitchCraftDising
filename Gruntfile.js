@@ -5,6 +5,17 @@ module.exports = function(grunt) {
     paths: {
       index: '.'
     },
+    less: {
+      development: {
+        options: {
+          paths: ["assets/css"]
+        },
+        files: {
+          "css/renderer.css": "css/renderer.less",
+          "css/editor.css": "css/editor.less",
+        }
+      }
+    },
     browserify: {
       
       dev: {
@@ -62,12 +73,17 @@ module.exports = function(grunt) {
           '<%= paths.index %>/scripts/**/*.jsx'
         ],
         tasks: ['browserify']
+      },
+      src: {
+        files: ['css/*.less'],
+        tasks: ['less'],
       }
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-browserify');
 
   grunt.registerTask('default', ['browserify', 'connect', 'watch']);

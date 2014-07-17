@@ -15,17 +15,33 @@
  * 
  * base.css overrides 
  */
+
 /**
  * We are not changing from display:none, but rather re-rendering instead. 
  * Therefore this needs to be displayed normally by default.
  */
-.visual_components {
-  position: relative;
-  /* POSITIONNING */
-}
-.visual_components .visual_components {
-  position: absolute;
-}
-.visual_components .width12 {
-  width: 100%;
+
+
+
+.visual_components{
+	position:relative;
+
+	.visual_components{
+		position:absolute;
+	}
+	
+	
+	/* POSITIONNING */
+	.width12{width:100%;}
+	@iterations: 11;
+
+	.mixin-loop (@i) when (@i > 0) {
+	  @width : @i*8.333;
+	  div.width@{i}{
+	  	width: @width;
+	  }
+	}
+
+
+
 }
