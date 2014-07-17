@@ -11,7 +11,8 @@ module.exports = function(grunt) {
           '<%= paths.index %>/js/bundle.js': ['<%= paths.index %>/js/app.js'],
         },
         options: {
-          transform: ['reactify']
+          transform: ['reactify'],
+          debug: true
         }
       }
     },

@@ -19,8 +19,10 @@ var React = require('react');
 var _ = require('underscore');
 var Backbone = require('backbone');
 
-var Editor = require('./components/Editor.react');
-var Renderer = require('./components/Renderer.react');
+var Editor = require('./components/Editor/Editor.react');
+var Renderer = require('./components/Renderer/Renderer.react');
+
+Backbone.$ = $;
 /*
 React.renderComponent(
   <TodoApp />,
@@ -31,10 +33,11 @@ React.renderComponent(
 var Router = Backbone.Router.extend({
   routes: {
     "/editor"               :  "editor",
-    "/editor/:id"               :  "editor",
+    "/editor/:id"           :  "editor",
     "/renderer"             :  "renderer"
   },
   editor : function(id){
+    debugger;
     React.renderComponent(
       <Editor />,
       document.getElementById('editor')
