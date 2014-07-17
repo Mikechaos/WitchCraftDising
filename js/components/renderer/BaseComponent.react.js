@@ -17,7 +17,6 @@
  */
 
 var React = require('react');
-var RendererActions = require('../actions/RendererActions');
 
 var BaseComponent = React.createClass({
 
@@ -37,9 +36,8 @@ var BaseComponent = React.createClass({
    * @param {string} text
    */
   _onSave: function(text) {
-    TodoActions.create(text);
   }
 
 });
 
-module.exports = Header;
+module.exports = BaseComponent;

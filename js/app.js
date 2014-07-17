@@ -32,9 +32,9 @@ React.renderComponent(
 */
 var Router = Backbone.Router.extend({
   routes: {
-    "/editor"               :  "editor",
-    "/editor/:id"           :  "editor",
-    "/renderer"             :  "renderer"
+    "editor"               :  "editor",
+    "editor/:id"           :  "editor",
+    "renderer"             :  "renderer"
   },
   editor : function(id){
     debugger;

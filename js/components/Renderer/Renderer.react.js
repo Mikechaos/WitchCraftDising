@@ -23,7 +23,6 @@
 
 var BaseComponent = require('./BaseComponent.react');
 var React = require('react');
-var ComponentStore = require('../stores/TodoStore');
 
 /**
  * Retrieve the current TODO data from the TodoStore
@@ -41,11 +40,9 @@ var TodoApp = React.createClass({
   },
 
   componentDidMount: function() {
-    TodoStore.on('change', this._onChange);
   },
 
   componentWillUnmount: function() {
-    TodoStore.off('change', this._onChange);
   },
 
   /**
