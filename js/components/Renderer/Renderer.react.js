@@ -41,18 +41,25 @@ var TodoApp = React.createClass({
   },
 
   componentDidMount: function() {
+    ComponentStore.on('change', this._onChange);
   },
 
   componentWillUnmount: function() {
+    ComponentStore.off('change', this._onChange);
   },
 
   /**
    * @return {object}
    */
   render: function() {
+    var components = [];
+    for (var key in this.state.allComponents) {
+      components.push(<BaseComponent key={key} component={this.state.allComponents[key]} />);
+    }
+
   	return (
-      <div>
-        test
+      <div class="visual_components">
+        {components}
       </div>
   	);
   },

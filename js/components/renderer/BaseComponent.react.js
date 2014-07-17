@@ -25,7 +25,7 @@ var BaseComponent = React.createClass({
    */
   render: function() {
     return (
-      <div class="visual_component top5 left2 width10 height2"></div>
+      <div className="visual_component top5 left2 width10 height2">test</div>
     );
   },
 

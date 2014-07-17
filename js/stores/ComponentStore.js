@@ -26,7 +26,6 @@ var merge = require('react/lib/merge');
 var CHANGE_EVENT = 'change';
 
 var _componentStore = new Backbone.Model({
-	defaults : {
 		id:908239048,
 		title:"shoes",
 		items:[{
@@ -114,9 +113,7 @@ var _componentStore = new Backbone.Model({
 				height:10
 			}
 		}]
-	}
 });
-
 /**
  * Create a TODO item.
  * @param  {string} text The content of the TODO
@@ -194,7 +191,8 @@ var TodoStore = _.extend(_componentStore, {
    * @return {object}
    */
   getAll: function() {
-    return _componentStore.toJSON();
+  	console.log(_componentStore.toJSON().items)
+    return _componentStore.toJSON().items;
   }
 });
 
