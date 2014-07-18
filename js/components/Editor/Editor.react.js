@@ -78,12 +78,19 @@ var Editor = React.createClass({
 
     if (col === this.colCount) { return row; }
 
-    row.push(<GridItem row={this.rowElems.num} col={col} key={"gridItem" + this.rowElems.num + "_" + col} />);
+    if (this.props.grid.length === 0) { var state = false; }
+    else { var state = this.props.grid[this.rowElems.num][col]; }
+
+    row.push(<GridItem row={this.rowElems.num} col={col} key={"gridItem" + this.rowElems.num + "_" + col} highlight={state} />);
 
     return this.buildRow(row, col + 1);
   },
 
   render: function() {
+    GridStore.on('change:grid', _.bind(function (model, grid) {
+      console.log('test');
+      this.setProps({grid: grid});
+    }, this));
     this.initGrid();
     var style = {
       "background-color": "white",
@@ -138,38 +145,8 @@ var Editor = React.createClass({
     return this.rows[row].props.items[col];
   },
 
-  calculateRect: function (active) {
-    if (this.state.origin.row > active.row) {
-      for (var i = this.state.origin.row; i >= active.row; --i) {
-        if (this.state.origin.col > active.col) {
-          this.rows[i].highlightItemsReverse(this.state.origin.col, active.col);
-        } else {
-          this.rows[i].highlightItems(this.state.origin.col, active.col);
-        }
-      }
-    } else {
-      for (var i = this.state.origin.row; i <= active.row; ++i) {
-        if (this.state.origin.col > active.col) {
-          this.rows[i].highlightItemsReverse(this.state.origin.col, active.col);
-        } else {
-          this.rows[i].highlightItems(this.state.origin.col, active.col);
-        }
-      }
-    }
-   // this.getItem(active.row, active.col).toggleSelect();
-  },
-
   stopDragging: function () {
     this.state.dragging = false;
-  },
-  /**
-   * Event handler called within TodoTextInput.
-   * Defining this here allows TodoTextInput to be used in multiple places
-   * in different ways.
-   * @param {string} text
-   */
-  _onSave: function(text) {
-    TodoActions.create(text);
   }
 
 });

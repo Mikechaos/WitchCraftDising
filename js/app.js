@@ -21,6 +21,7 @@ var Backbone = require('backbone');
 
 var Editor = require('./components/Editor/Editor.react');
 var Renderer = require('./components/Renderer/Renderer.react');
+var GridStore = require("./stores/GridStore")
 
 Backbone.$ = $;
 /*
@@ -30,6 +31,7 @@ React.renderComponent(
 );
 
 */
+
 var Router = Backbone.Router.extend({
   routes: {
     "editor"               :  "editor",
@@ -38,8 +40,8 @@ var Router = Backbone.Router.extend({
     '*path'                :  'editor'    
   },
   editor : function(id){
-    React.renderComponent(
-      <Editor />,
+    this.editor = React.renderComponent(
+      <Editor grid={ GridStore.get('grid') } />,
       document.getElementById('editor')
     );
   },
@@ -48,7 +50,11 @@ var Router = Backbone.Router.extend({
       <Renderer />,
       document.getElementById('renderer')
     );
-  }
+  },
+
+  init: function () {  }
 });
 var approuter = new Router();
 Backbone.history.start({pushState: true,  hashChange: false});
+
+approuter.init();

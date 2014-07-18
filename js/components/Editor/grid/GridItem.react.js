@@ -39,7 +39,7 @@ var GridItem = React.createClass({
       "margin-top": "-5px;"
     };
 
-    if (this.state.highlighted) {
+    if (this.props.highlight) {
       borderStyle.border = "solid pink 1px";
     }
 

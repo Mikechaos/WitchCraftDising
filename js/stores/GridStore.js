@@ -25,7 +25,9 @@ var merge = require('react/lib/merge');
 
 var CHANGE_EVENT = 'change';
 
-var GridStore = new Backbone.Model.extend({});
+var GridStore = new Backbone.Model({
+  grid: []
+});
 
 GridComponent = {
 
@@ -92,7 +94,7 @@ GridComponent = {
       grid.push(row);
     }
 
-    debugger;
+    GridStore.set('grid', grid);
   },
 
   isIncludedInRect: function (row, col) {
