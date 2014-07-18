@@ -43,7 +43,7 @@ var Header = React.createClass({
             onSave={this._onSave}
           />
           <div className="right-tools">
-            <a href="#" className="btn nobg" onClick={this._hideGrid}><i className="fa fa-th"></i>Hide grid</a>
+            <a href="#" className="btn nobg inverted" onClick={this._hideGrid}><i className="fa fa-th"></i>Hide grid</a>
             <a href="#" className="btn" onClick={this._save}><i className="fa fa-floppy-o"></i>Save / preview</a>
             <a href="#" className="btn" onClick={this._showPublish}><i className="fa fa-cloud-upload"></i> Publish</a>
 
