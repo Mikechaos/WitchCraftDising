@@ -19,7 +19,7 @@ var React = require('react');
 
 var ComponentPublish = React.createClass({
     componentDidMount: function() {
-
+        
     },
     componentWillUnmount: function() {
       

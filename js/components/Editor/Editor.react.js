@@ -23,6 +23,11 @@ var Sidebar = require('./Sidebar.react');
 var GridItem = require('./grid/GridItem.react');
 var GridRow = require('./grid/GridRow.react');
 
+var modals = {
+    showPublish: false,
+};
+
+
 var Editor = React.createClass({
 
   rowCount: 12,

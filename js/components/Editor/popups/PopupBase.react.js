@@ -16,36 +16,59 @@
  * @jsx React.DOM
  */
 var React = require('react'); 
-
+var ModalStore = require('../../../stores/ModalStore');
+var ModalActions = require('../../../actions/ModalActions');
 
 var Modal = React.createClass({
     componentDidMount: function() {
-
+        ModalStore.on('change:activeModal', this.handleActions);
     },
-    show : function(){
-        // Initialize the modal, once we have the DOM node
-        var $el = $(this.getDOMNode());
-        $el.find(".modal-dialog").animate({
+    handleActions : function(ModalStore, activeModal){
+        if(activeModal.id){
+            this.show(activeModal.id);
+        }else{
+            this.destroy();
+        }
+    },
+    show : function(id){
+        var $el =$("#"+id);
+        console.log(id)
+        $el.find(".modal-dialog").css("display","block").animate({
             opacity:0.7
         },200);
-        $el.find(".modal-content").animate({
+        $el.find(".modal-content").css("display","block").animate({
             opacity:1
         },200);
     },
     componentWillUnmount: function() {
         //$(this.getDOMNode()).off('hidden');
     },
-    // This was the key fix --- stop events from bubbling
-    handleClick: function(e) {
-        e.stopPropagation();
-    },
     hide: function(e) {
-        e.stopPropagation();
+        e.preventDefault();
+        ModalActions.destroy();
+    },
+    destroy : function(){
+        $(".modal-dialog:visible").animate({
+            opacity:0.7
+        },300, function(){
+            $(this).css({
+                opacity:0,
+                display:"none"
+            });
+        });
+        $(".modal-content:visible").css("display","block").animate({
+            opacity:1
+        },300, function(){
+            $(this).css({
+                opacity:0,
+                display:"none"
+            });
+        });
     },
     render: function() {
         var Body = this.props.body;
         return (
-            <div  className="modal fade" role="dialog" aria-hidden="true">
+            <div  className="modal fade" id={this.props.id} role="dialog" aria-hidden="true">
                 <div onClick={this.hide} className="modal-dialog"></div>
                 <div className="modal-content">
                     <Body />

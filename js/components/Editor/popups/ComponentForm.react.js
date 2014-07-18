@@ -15,3 +15,45 @@
  *
  * @jsx React.DOM
  */
+var React = require('react');
+
+var ComponentSelection = React.createClass({
+    componentDidMount: function() {
+
+    },
+    componentWillUnmount: function() {
+      
+    },
+    // This was the key fix --- stop events from bubbling
+    handleClick: function(e) {
+        e.stopPropagation();
+    },
+    render: function() {
+        return (
+            <div className="modalSelection" role="dialog" aria-hidden="true">
+                <h2>Select your marketing weapon of choice</h2>
+                <div class="selection">
+                    <a href="#">
+                        <img src="images/sales.png" />
+                        <span>Image</span>
+                    </a>
+                    <a href="#">
+                        <img src="images/categories.png" />
+                        <span>Categories</span>
+                    </a>
+                    <a href="#">
+                        <img src="images/products.png" />
+                        <span>Products</span>
+                    </a>
+                    <a href="#">
+                        <img src="images/text.png" />
+                        <span>text</span>
+                    </a>
+                </div>
+            </div>
+        );
+    }
+});
+
+
+module.exports = ComponentSelection;

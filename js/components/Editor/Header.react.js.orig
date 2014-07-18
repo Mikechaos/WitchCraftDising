@@ -16,6 +16,9 @@
  * @jsx React.DOM
  */
 
+
+
+
 var React = require('react');
 var Modal = require('./popups/PopupBase.react');
 var ModalPublish = require('./popups/Publish.react');
@@ -41,11 +44,18 @@ var Header = React.createClass({
             onSave={this._onSave}
           />
           <div className="right-tools">
+<<<<<<< HEAD
+            <a href="#" className="btn nobg inverted" onClick={this._hideGrid}><i className="fa fa-th"></i>Hide grid</a>
+            <a href="#" className="btn" onClick={this._save}><i className="fa fa-floppy-o"></i>Save / preview</a>
+            <a href="#" className="btn" onClick={this._showPublish}><i className="fa fa-cloud-upload"></i> Publish</a>
+            <Modal body={ModalPublish} show={this.prop.showPublish} />
+=======
             <a href="#" className="btn nobg" onClick={this._hideGrid}><i className="fa fa-th"></i>Hide grid</a>
             <a href="#" className="btn" onClick={this._save.bind(this,"ModalSelection")}><i className="fa fa-floppy-o"></i>Save / preview</a>
             <Modal body={ModalSelection} id="ModalSelection" />
             <a href="#" className="btn" onClick={this._showPublish.bind(this,"ModalPublish")}><i className="fa fa-cloud-upload"></i> Publish</a>
             <Modal body={ModalPublish} id="ModalPublish" />
+>>>>>>> popups
           </div>
         </div>
       </header>
