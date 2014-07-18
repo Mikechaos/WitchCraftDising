@@ -34,8 +34,13 @@ var Editor = React.createClass({
       origin: {
         row: 0,
         col: 0
-      }
+      },
+      width: 0
     };
+  },
+
+  componentDidMount: function () {
+    this.state.width = $('#test').width();
   },
 
   initGrid: function () {
@@ -73,7 +78,10 @@ var Editor = React.createClass({
   render: function() {
     this.initGrid();
     var style = {
-      "background-color": "white"
+      "background-color": "white",
+      width: this.state.width,
+      height: this.state.width,
+      "min-width": "600px"
     }
     return (
         <div className="mainSection">
