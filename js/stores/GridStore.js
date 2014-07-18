@@ -40,10 +40,10 @@ GridComponent = {
   composePoints: function (origin, target) {
     var newOrigin = {}, newTarget = {};
 
-    newOrigin.row = origin.row < target.row ? origin.row : target.row;
-    newOrigin.col = origin.col < target.col ? origin.col : target.col;
-    newTarget.row = target.row > target.row ? origin.row : target.row;
-    newTarget.col = target.col > target.col ? origin.col : target.col;
+    newOrigin.row = origin.row <= target.row ? origin.row : target.row;
+    newOrigin.col = origin.col <= target.col ? origin.col : target.col;
+    newTarget.row = target.row > origin.row ? target.row : origin.row;
+    newTarget.col = target.col > origin.col ? target.col : origin.col;
 
     this.origin = newOrigin;
     this.target = newTarget;
