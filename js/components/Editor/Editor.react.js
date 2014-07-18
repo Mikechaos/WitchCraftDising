@@ -131,15 +131,15 @@ var Editor = React.createClass({
 
   startInterval: function () {
     var interval = setInterval(_.bind(function () {
+      if (this.state.dragging === false) {
+        return clearInterval(interval);
+      }
       var target = this.findActiveItem();
       GridAction.triggerRect({
         origin: this.state.origin,
         target: target
       });
       //this.calculateRect(active);
-      if (this.state.dragging === false) {
-        clearInterval(interval);
-      }
     }, this), 100)
   },
 
