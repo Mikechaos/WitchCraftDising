@@ -22,6 +22,9 @@ var Header = require('./Header.react');
 var Sidebar = require('./Sidebar.react');
 var GridItem = require('./grid/GridItem.react');
 var GridRow = require('./grid/GridRow.react');
+var AppDispatcher = require("../../dispatcher/AppDispatcher");
+var GridAction = require("../../actions/GridAction");
+var GridStore = require("../../stores/GridStore");
 
 var modals = {
     showPublish: false,
@@ -89,7 +92,6 @@ var Editor = React.createClass({
       "min-width": "600px",
       "padding-top": "5px"
     }
-    debugger;
     return (
         <div className="mainSection">
           <Sidebar />
@@ -109,12 +111,16 @@ var Editor = React.createClass({
 
   startInterval: function () {
     var interval = setInterval(_.bind(function () {
-      var active = this.findActiveItem();
-      this.calculateRect(active);
+      var target = this.findActiveItem();
+      GridAction.triggerRect({
+        origin: this.state.origin,
+        target: target
+      });
+      //this.calculateRect(active);
       if (this.state.dragging === false) {
         clearInterval(interval);
       }
-    }, this), 100)
+    }, this), 1000)
   },
 
   findActiveItem: function () {
