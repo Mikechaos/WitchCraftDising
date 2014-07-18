@@ -19,9 +19,9 @@
 var React = require('react');
 var _ = require('underscore');
 var Header = require('./Header.react');
+var Sidebar = require('./Sidebar.react');
 var GridItem = require('./grid/GridItem.react');
 var GridRow = require('./grid/GridRow.react');
-
 
 var Editor = React.createClass({
 
@@ -77,8 +77,11 @@ var Editor = React.createClass({
     }
     return (
         <div className="mainSection">
-          <Header />
-          <div id={"test"} style={style} onMouseDown={this.startDragging} onMouseUp={this.stopDragging}>{this.rows}</div>
+          <Sidebar />
+          <div className="editor">
+            <Header />
+            <div id={"test"} style={style} onMouseDown={this.startDragging} onMouseUp={this.stopDragging}>{this.rows}</div>
+          </div>
         </div>
     );
   },

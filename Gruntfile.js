@@ -75,7 +75,7 @@ module.exports = function(grunt) {
         tasks: ['browserify']
       },
       src: {
-        files: ['css/*.less'],
+        files: ['css/**/*.less'],
         tasks: ['less'],
       }
     }

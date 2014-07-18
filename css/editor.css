@@ -19,15 +19,15 @@
   font-size: 13px;
 }
 #header {
-  height: 150px;
+  height: 140px;
 }
 #header h1 {
   display: block;
   margin: 0;
   padding: 0;
-  height: 78px;
+  height: 70px;
   font-size: 24px;
-  line-height: 78px;
+  line-height: 70px;
   border-bottom: 1px solid #d8d8d8;
 }
 #header .tools {
@@ -52,6 +52,31 @@
 #header .tools .right-tools .btn {
   margin-left: 10px;
 }
+#sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 183px;
+  height: 100%;
+  background: #303030;
+}
+#sidebar .logo {
+  display: block;
+}
+#sidebar .tools-pages a {
+  display: block;
+  padding: 10px;
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid #000;
+  font-size: 12px;
+}
+#sidebar .tools-pages a:hover {
+  background: #1d1d1d;
+}
+#sidebar .tools-pages a i {
+  margin-right: 5px;
+}
 #todo-list li .edit {
   display: inline;
 }
@@ -60,4 +85,7 @@ body {
   font-family: "Myriad Pro", sans-serif;
   background: #f1f1f1;
   color: #000;
+}
+.editor {
+  margin-left: 183px;
 }
