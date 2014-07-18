@@ -58,11 +58,13 @@ var TodoApp = React.createClass({
     }
 
   	return (
-      <div className="visual_components">
+      <div className="visual_components"> 
         {components}
       </div>
   	);
   },
+
+
 
   /**
    * Event handler for 'change' events coming from the TodoStore

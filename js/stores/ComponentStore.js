@@ -43,7 +43,7 @@ var _componentStore = new Backbone.Model({
 		{
 			type:"image",
 			url:"www.ssense.com",
-			src:"www.ssense.com/images/whatever.png",
+			src:"https://static2.ssense.com/ssenseweb/image/upload/c_lpad,g_south,h_1086,w_724/c_scale,h_560/v808753779/42259M032001_1.jpg",
 			positions:{
 				top:4,
 				left:9
@@ -56,8 +56,8 @@ var _componentStore = new Backbone.Model({
 		{
 			type:"image_title",
 			url:"http://www.ssense.com",
-			title:"We are the best",
-			src:"http://www.ssense.com/images/whatever.png",
+			title:"We are the best TITLE",
+			src:"https://static1.ssense.com/ssenseweb/image/upload/c_lpad,g_south,h_1086,w_724/c_scale,h_560/v1626112192/42266M004001_1.jpg",
 			custom_css:"<style>.whatever{display:none;}</style>",
 			positions:{
 				top:8,
@@ -71,8 +71,8 @@ var _componentStore = new Backbone.Model({
 		{
 			type:"image_text",
 			url:"http://www.ssense.com",
-			title:"We are the best",
-			src:"http://www.ssense.com/images/whatever.png",
+			title:"We are the best TEXT yes",
+			src:"https://static1.ssense.com/ssenseweb/image/upload/c_lpad,g_south,h_1086,w_724/c_scale,h_560/v1850731820/42092M032001_1.jpg",
 			custom_css:"#432423423 {display:none;}</style>",
 			positions:{
 				top:2,
@@ -86,8 +86,8 @@ var _componentStore = new Backbone.Model({
 		{
 			type:"image_text",
 			url:"http://www.ssense.com",
-			title:"We are the best",
-			src:"http://www.ssense.com/images/whatever.png",
+			title:"We are the best TEXT",
+			src:"https://static1.ssense.com/ssenseweb/image/upload/c_lpad,g_south,h_1086,w_724/c_scale,h_560/v580910961/42259M004002_1.jpg",
 			custom_css:"<style>.whatever{display:none;}</style>",
 			positions:{
 				top:2,

@@ -17,10 +17,8 @@
  */
 
 var React = require('react');
-var ImageText = require('./ComponentImageText');
-var ImgageTitle = require('./ComponentImageTitle');
 
-var BaseComponent = React.createClass({
+var ComponentImageTitle = React.createClass({
 
   /**
    * @return {object}
@@ -28,15 +26,12 @@ var BaseComponent = React.createClass({
   render: function() {
     var component = this.props.component;
     var positionsClasses = "visual_component top"+component.positions.top+" left"+component.positions.left+" width"+component.sizes.width+" height"+component.sizes.height+" "+component.type;
-    var node;
-    if(component.type === "image_title"){
-      Node = ImgageTitle;
-    }else{
-      Node = ImageText;
-    }
+
     return (
       <div className={positionsClasses}>
-        <Node component={component} />
+        <a href={component.url}><img src={component.src} alt={component.title} />
+        <h2>{component.title}</h2>
+        </a>
       </div>
     );
   },
@@ -52,4 +47,4 @@ var BaseComponent = React.createClass({
 
 });
 
-module.exports = BaseComponent;
+module.exports = ComponentImageTitle;
