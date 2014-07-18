@@ -39,8 +39,8 @@ var Editor = React.createClass({
     };
   },
 
-  componentDidMount: function () {
-    this.state.width = $('#test').width();
+  componentWillMount: function () {
+    this.state.width = $('#editor').width();
   },
 
   initGrid: function () {
@@ -81,8 +81,10 @@ var Editor = React.createClass({
       "background-color": "white",
       width: this.state.width,
       height: this.state.width,
-      "min-width": "600px"
+      "min-width": "600px",
+      "padding-top": "5px"
     }
+    debugger;
     return (
         <div className="mainSection">
           <Sidebar />

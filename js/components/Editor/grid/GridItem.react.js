@@ -33,8 +33,8 @@ var GridItem = React.createClass({
   render: function() {
     borderStyle = {
       border: "solid grey 1px",
-      width: "119px",
-      height: "119px",
+      width: 98 / 12 + "%",
+      height: "100%",
       display: "inline-block",
       "margin-top": "-5px;"
     };

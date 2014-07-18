@@ -23,8 +23,12 @@ var GridItem = require('./GridItem.react.js');
 var GridRow = React.createClass({
 
   render: function() {
+    var style = {
+      width: "inherit",
+      height: 100 / 12 + "%"
+    }
     return (
-      <div className={"grid-row"}>{this.props.items}</div>
+      <div className={"grid-row"} style={style}>{this.props.items}</div>
     );
   },
 
