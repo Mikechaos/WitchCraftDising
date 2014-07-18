@@ -1,3 +1,63 @@
+.btn {
+  display: inline-block;
+  box-sizing: border-box;
+  height: 36px;
+  text-decoration: none;
+  background: black;
+  line-height: 36px;
+  color: #fff;
+  padding: 4px 10px;
+  text-align: center;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+.btnnobg {
+  background: transparent;
+}
+.btn i {
+  margin-right: 5px;
+  font-size: 13px;
+}
+#header {
+  height: 150px;
+}
+#header h1 {
+  display: block;
+  margin: 0;
+  padding: 0;
+  height: 78px;
+  font-size: 24px;
+  line-height: 78px;
+  border-bottom: 1px solid #d8d8d8;
+}
+#header .tools {
+  margin-top: 10px;
+}
+#header .tools input {
+  background: transparent;
+  border: none;
+  float: left;
+  font-size: 20px;
+  height: 20px;
+  outline: none;
+  width: 400px;
+  padding: 10px;
+}
+#header .tools .right-tools {
+  float: right;
+  margin-top: 5px;
+  width: 400px;
+  text-align: right;
+}
+#header .tools .right-tools .btn {
+  margin-left: 10px;
+}
 #todo-list li .edit {
   display: inline;
+}
+html,
+body {
+  font-family: "Myriad Pro", sans-serif;
+  background: #f1f1f1;
+  color: #000;
 }

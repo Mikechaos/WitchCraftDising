@@ -18,11 +18,12 @@
 
 var React = require('react');
 var _ = require('underscore');
-var GridItem = require('./GridItem.react.js');
-var GridRow = require('./GridRow.react.js');
+var Header = require('./Header.react');
+var GridItem = require('./grid/GridItem.react');
+var GridRow = require('./grid/GridRow.react');
 
 
-var Header = React.createClass({
+var Editor = React.createClass({
 
   rowCount: 12,
   colCount: 12,
@@ -75,7 +76,10 @@ var Header = React.createClass({
       "background-color": "white"
     }
     return (
-        <div id={"test"} style={style} onMouseDown={this.startDragging} onMouseUp={this.stopDragging}>{this.rows}</div>
+        <div className="mainSection">
+          <Header />
+          <div id={"test"} style={style} onMouseDown={this.startDragging} onMouseUp={this.stopDragging}>{this.rows}</div>
+        </div>
     );
   },
 
@@ -146,4 +150,4 @@ var Header = React.createClass({
 
 });
 
-module.exports = Header;
+module.exports = Editor;

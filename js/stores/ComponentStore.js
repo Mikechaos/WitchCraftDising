@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * TodoStore
+ * componentStore
  */
 
 var _ = require('underscore');
@@ -115,8 +115,8 @@ var _componentStore = new Backbone.Model({
 		}]
 });
 /**
- * Create a TODO item.
- * @param  {string} text The content of the TODO
+ * Create a component item.
+ * @param  {string} text The content of the component
  */
 function create(text) {
   // Hand waving here -- not showing how this interacts with XHR or persistent
@@ -131,7 +131,7 @@ function create(text) {
 }
 
 /**
- * Update a TODO item.
+ * Update a component item.
  * @param  {string} id
  * @param {object} updates An object literal containing only the data to be
  *     updated.
@@ -143,8 +143,8 @@ function update(id, updates) {
 }
 
 /**
- * Update all of the TODO items with the same object.
- *     the data to be updated.  Used to mark all TODOs as completed.
+ * Update all of the component items with the same object.
+ *     the data to be updated.  Used to mark all components as completed.
  * @param  {object} updates An object literal containing only the data to be
  *     updated.
 
@@ -156,7 +156,7 @@ function updateAll(updates) {
 }
 
 /**
- * Delete a TODO item.
+ * Delete a component item.
  * @param  {string} id
  */
 function destroy(id) {
@@ -164,7 +164,7 @@ function destroy(id) {
 }
 
 /**
- * Delete all the completed TODO items.
+ * Delete all the completed component items.
  */
 function destroyCompleted() {
   _.each(_componentStore.keys(), function(id){
@@ -174,10 +174,10 @@ function destroyCompleted() {
   });
 }
 
-var TodoStore = _.extend(_componentStore, {
+var componentStore = _.extend(_componentStore, {
 
   /**
-   * Tests whether all the remaining TODO items are marked as completed.
+   * Tests whether all the remaining component items are marked as completed.
    * @return {booleam}
    */
   areAllComplete: function() {
@@ -187,11 +187,10 @@ var TodoStore = _.extend(_componentStore, {
   },
 
   /**
-   * Get the entire collection of TODOs.
+   * Get the entire collection of components.
    * @return {object}
    */
   getAll: function() {
-  	console.log(_componentStore.toJSON().items)
     return _componentStore.toJSON().items;
   }
 });
@@ -209,7 +208,7 @@ AppDispatcher.on('all', function(eventName, payload) {
       break;
 
     case 'toggleCompleteAll':
-      if (TodoStore.areAllComplete()) {
+      if (componentStore.areAllComplete()) {
         updateAll({complete: false});
       } else {
         updateAll({complete: true});
