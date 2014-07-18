@@ -66,7 +66,7 @@ var Editor = React.createClass({
 
   addRow: function () {
     this.rowElems.items = this.buildRow();
-    this.rows.push(<GridRow items={this.rowElems.items} />)
+    this.rows.push(<GridRow items={this.rowElems.items} key={"gridRow" + this.rowElems.num}/>)
   },
 
   buildRow: function (row, col) {
@@ -75,7 +75,7 @@ var Editor = React.createClass({
 
     if (col === this.colCount) { return row; }
 
-    row.push(<GridItem row={this.rowElems.num} col={col} />);
+    row.push(<GridItem row={this.rowElems.num} col={col} key={"gridItem" + this.rowElems.num + "_" + col} />);
 
     return this.buildRow(row, col + 1);
   },
