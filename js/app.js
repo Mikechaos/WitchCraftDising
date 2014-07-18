@@ -38,7 +38,6 @@ var Router = Backbone.Router.extend({
     '*path'                :  'editor'    
   },
   editor : function(id){
-    console.log("shir")
     React.renderComponent(
       <Editor />,
       document.getElementById('editor')
