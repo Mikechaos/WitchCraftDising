@@ -22,6 +22,7 @@ var Header = require('./Header.react');
 var Sidebar = require('./Sidebar.react');
 var GridItem = require('./grid/GridItem.react');
 var GridRow = require('./grid/GridRow.react');
+var GridView = require('./grid/GridView.react');
 var AppDispatcher = require("../../dispatcher/AppDispatcher");
 var GridAction = require("../../actions/GridAction");
 var GridStore = require("../../stores/GridStore");
@@ -49,6 +50,11 @@ var Editor = React.createClass({
 
   componentWillMount: function () {
     this.state.width = $('#editor').width();
+    GridStore.on('change:grid', _.bind(function (model, grid) {
+      console.log('test');
+      this.setProps({grid: grid});
+    }, this));
+    this.initGrid();
   },
 
   initGrid: function () {
@@ -86,12 +92,18 @@ var Editor = React.createClass({
     return this.buildRow(row, col + 1);
   },
 
+  mapGrid: function () {
+    if (this.props.grid.length === 0) { return false; }
+    for (var i = 0; i < 12; ++i) {
+      for (var j = 0; j < 12; ++j) {
+        var state = this.props.grid[i][j]
+        this.rows[i].props.items[j].setState({highlight: state});
+      }
+    }
+  },
+
   render: function() {
-    GridStore.on('change:grid', _.bind(function (model, grid) {
-      console.log('test');
-      this.setProps({grid: grid});
-    }, this));
-    this.initGrid();
+    this.mapGrid();
     var style = {
       "background-color": "white",
       width: this.state.width,
@@ -104,7 +116,9 @@ var Editor = React.createClass({
           <Sidebar />
           <div className="editor">
             <Header />
-            <div id={"test"} style={style} onMouseDown={this.startDragging} onMouseUp={this.stopDragging}>{this.rows}</div>
+            <div id={"editor-view"} style={style} onMouseDown={this.startDragging} onMouseUp={this.stopDragging}>
+              <GridView rows={this.rows} grid={this.props.grid} />
+            </div>
           </div>
         </div>
     );
@@ -127,7 +141,7 @@ var Editor = React.createClass({
       if (this.state.dragging === false) {
         clearInterval(interval);
       }
-    }, this), 1000)
+    }, this), 100)
   },
 
   findActiveItem: function () {

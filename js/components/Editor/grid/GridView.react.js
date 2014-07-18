@@ -17,23 +17,22 @@
  */
 
 var React = require('react');
+var _ = require('underscore');
 
+var GridStore = require("../../../stores/GridStore");
 
-var Header = React.createClass({
+var GridView = React.createClass({
 
   /**
    * @return {object}
    */
   render: function() {
+    style= {
+      width: "inherit",
+      height: "inherit"
+    };
     return (
-      <header id="header">
-        <h1>todos</h1>
-        <TodoTextInput
-          id="new-todo"
-          placeholder="What needs to be done?"
-          onSave={this._onSave}
-        />
-      </header>
+      <div style={style}>{this.props.rows}</div>
     );
   },
 
@@ -49,4 +48,4 @@ var Header = React.createClass({
 
 });
 
-module.exports = Header;
+module.exports = GridView;
