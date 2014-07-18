@@ -15,13 +15,15 @@
  *
  * @jsx React.DOM
  */
-var React = require('react');
+var React = require('react'); 
 
 
 var Modal = React.createClass({
     componentDidMount: function() {
-        // Initialize the modal, once we have the DOM node
 
+    },
+    show : function(){
+        // Initialize the modal, once we have the DOM node
         var $el = $(this.getDOMNode());
         $el.find(".modal-dialog").animate({
             opacity:0.7
