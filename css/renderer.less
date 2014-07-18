@@ -22,26 +22,38 @@
  */
 
 
-
 .visual_components{
 	position:relative;
 
-	.visual_components{
+	.visual_component{
 		position:absolute;
+		background:#000;
 	}
-	
 	
 	/* POSITIONNING */
-	.width12{width:100%;}
+
 	@iterations: 11;
 
+	.width12{width:100%;}
+	.height12{width:100%;}
 	.mixin-loop (@i) when (@i > 0) {
-	  @width : @i*8.333;
+	  @size : @i*8.333;
+	  @pos : @i*8.333-8.333; 
 	  div.width@{i}{
-	  	width: @width;
+	  	width:unit(@size, %);
 	  }
+	  div.height@{i}{
+	  	height: unit(@size, %);
+	  }
+
+	  div.top@{i}{
+	  	top: unit(@pos, %);
+	  }
+	  div.left@{i}{
+	  	left: unit(@pos, %);
+	  }
+
+	  .mixin-loop(@i - 1);
 	}
-
-
-
+	.mixin-loop(@iterations);
 }

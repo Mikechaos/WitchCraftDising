@@ -32,12 +32,12 @@ var _componentStore = new Backbone.Model({
 			type:"product",
 			id:768930,
 			positions:{
-				top:2,
-				left:5
+				top:4,
+				left:0
 			},
-			size:{
+			sizes:{
 				width:4,
-				height:10
+				height:4
 			}
 		},
 		{
@@ -45,11 +45,11 @@ var _componentStore = new Backbone.Model({
 			url:"www.ssense.com",
 			src:"www.ssense.com/images/whatever.png",
 			positions:{
-				top:2,
-				left:5
+				top:4,
+				left:9
 			},
-			size:{
-				width:4,
+			sizes:{
+				width:8,
 				height:10
 			}
 		},
@@ -60,12 +60,12 @@ var _componentStore = new Backbone.Model({
 			src:"http://www.ssense.com/images/whatever.png",
 			custom_css:"<style>.whatever{display:none;}</style>",
 			positions:{
-				top:2,
-				left:5
+				top:8,
+				left:3
 			},
-			size:{
-				width:4,
-				height:10
+			sizes:{
+				width:10,
+				height:2
 			}
 		},
 		{
@@ -78,7 +78,7 @@ var _componentStore = new Backbone.Model({
 				top:2,
 				left:5
 			},
-			size:{
+			sizes:{
 				width:4,
 				height:10
 			}
@@ -93,7 +93,7 @@ var _componentStore = new Backbone.Model({
 				top:2,
 				left:5
 			},
-			size:{
+			sizes:{
 				width:4,
 				height:10
 			}
@@ -108,7 +108,7 @@ var _componentStore = new Backbone.Model({
 				top:2,
 				left:5
 			},
-			size:{
+			sizes:{
 				width:4,
 				height:10
 			}
@@ -261,7 +261,7 @@ var products = {
 			top:2,
 			left:5
 		}
-		size:{
+		sizes:{
 			width:4,
 			height:10
 		}
@@ -274,7 +274,7 @@ var products = {
 			top:2,
 			left:5
 		}
-		size:{
+		sizes:{
 			width:4,
 			height:10
 		}
@@ -289,7 +289,7 @@ var products = {
 			top:2,
 			left:5
 		}
-		size:{
+		sizes:{
 			width:4,
 			height:10
 		}
@@ -304,7 +304,7 @@ var products = {
 			top:2,
 			left:5
 		}
-		size:{
+		sizes:{
 			width:4,
 			height:10
 		}
@@ -319,7 +319,7 @@ var products = {
 			top:2,
 			left:5
 		}
-		size:{
+		sizes:{
 			width:4,
 			height:10
 		}
@@ -334,7 +334,7 @@ var products = {
 			top:2,
 			left:5
 		}
-		size:{
+		sizes:{
 			width:4,
 			height:10
 		}

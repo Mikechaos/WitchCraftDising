@@ -58,7 +58,7 @@ var TodoApp = React.createClass({
     }
 
   	return (
-      <div class="visual_components">
+      <div className="visual_components">
         {components}
       </div>
   	);
