@@ -1,3 +1,32 @@
+.modal .modal-dialog {
+  -webkit-transform: translateZ(0);
+  position: fixed;
+  opacity: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 20;
+  background-color: #000;
+  width: 100%;
+  height: 100%;
+}
+.modal .modal-content {
+  position: fixed;
+  width: 920px;
+  top: 150px;
+  left: 50%;
+  margin-left: -480px;
+  opacity: 0;
+  background: #fff;
+  z-index: 21;
+  padding: 60px 20px;
+}
+.modal .modal-content h2 {
+  font-weight: normal;
+  font-size: 18px;
+  text-align: center;
+}
 .btn {
   display: inline-block;
   box-sizing: border-box;

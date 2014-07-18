@@ -22,6 +22,7 @@
 var React = require('react');
 var Modal = require('./popups/PopupBase.react');
 var ModalPublish = require('./popups/Publish.react');
+var ModalSelection = require('./popups/Publish.react');
 var ComponentStore = require('../../stores/ComponentStore');
 var ENTER_KEY_CODE = 13;
 
@@ -45,7 +46,7 @@ var Header = React.createClass({
             <a href="#" className="btn nobg" onClick={this._hideGrid}><i className="fa fa-th"></i>Hide grid</a>
             <a href="#" className="btn" onClick={this._save}><i className="fa fa-floppy-o"></i>Save / preview</a>
             <a href="#" className="btn" onClick={this._showPublish}><i className="fa fa-cloud-upload"></i> Publish</a>
-            <Modal body={ModalPublish} />
+
           </div>
         </div>
       </header>
@@ -67,7 +68,11 @@ var Header = React.createClass({
     
   },
   _showPublish : function () {
-    
+    console.log("shiat")
+    React.renderComponent(
+        <Modal body={ModalPublish} />,
+        document.getElementById('modals')
+    );
   },
 
 
