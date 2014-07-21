@@ -193,8 +193,11 @@ function updateAll(updates) {
  * @param  {string} id
  */
 function addItem(item) {
-  //_componentStore.unset(id);
-  console.log(item);
+  // Hand waving here -- not showing how this interacts with XHR or persistent
+  // server-side storage.
+  // Using the current timestamp in place of a real id.
+  var id = Date.now();
+  _componentStore.set(id, _.extend( item, {id: id}));
 }
 
 /**
