@@ -54,7 +54,7 @@ var ComponentSelection = React.createClass({
                             <img src="images/sales.png" />
                             <span>Image</span>
                         </a>
-                        <a onClick={this.showForm.bind(this,"image_text")} href="#">
+                        <a onClick={this.showForm.bind(this,"image_title")} href="#">
                             <img src="images/categories.png" />
                             <span>Categories</span>
                         </a>

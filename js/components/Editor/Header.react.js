@@ -17,6 +17,7 @@
  */
 
 var React = require('react');
+var Backbone = require('backbone');
 var Modal = require('./popups/PopupBase.react');
 var ModalPublish = require('./popups/Publish.react');
 var ModalActions = require('../../actions/ModalActions.js');
@@ -63,6 +64,7 @@ var Header = React.createClass({
 
   },
   _save : function (id, e) {
+    e.preventDefault();
 
   },
   _showPublish : function (id, e) {
