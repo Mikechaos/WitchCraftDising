@@ -27,7 +27,7 @@ var CHANGE_EVENT = 'change';
 
 var GridStore = new Backbone.Model({
   grid: [],
-  rows: 36,
+  rows: 12,
   cols: 12
 });
 
