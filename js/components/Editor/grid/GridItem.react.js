@@ -51,12 +51,12 @@ var GridItem = React.createClass({
 
   setActive: function () {
     this.state.active = true;
-    console.log(this.props, this.state);
+   // console.log(this.props, this.state);
   },
 
   setInactive: function () {
     this.state.active = false;
-    console.log(this.props, this.state);
+   // console.log(this.props, this.state);
   },
 
   toggleSelect: function () {

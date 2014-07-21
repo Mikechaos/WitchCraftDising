@@ -197,7 +197,7 @@ function addItem(item) {
   // server-side storage.
   // Using the current timestamp in place of a real id.
   var id = Date.now();
-  _componentStore.set(id, _.extend( item, {id: id}));
+  _componentStore.set( _.extend( item, {id: id}));
 }
 
 /**
@@ -225,7 +225,11 @@ var componentStore = _.extend(_componentStore, {
 
 
   addItem: function(item){
-  	console.log(item);
+  	var id = Date.now();
+  	var itemList = _componentStore.toJSON().items;
+  	itemList.push(item);
+  	_componentStore.set({"items":itemList});
+  	_componentStore.trigger("change");
   },
 
   /**

@@ -32,7 +32,6 @@ var ComponentSelection = React.createClass({
 
     addItem: function(e) {
         var rect = GridStore.get('rect');
-        debugger;
         e.preventDefault();
         var data = {
             url :  this.refs.link.getDOMNode().value.trim(),
