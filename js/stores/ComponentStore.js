@@ -29,88 +29,121 @@ var _componentStore = new Backbone.Model({
 		id:908239048,
 		title:"shoes",
 		items:[{
-			type:"product",
-			id:768930,
+			type:"image_title",
+			url:"www.ssense.com",
+			title:"Heels",
+			src:"",
 			positions:{
-				top:4,
-				left:0
+				top:1,
+				left:2
 			},
 			sizes:{
 				width:4,
-				height:4
-			}
-		},
-		{
-			type:"image",
-			url:"www.ssense.com",
-			src:"https://static2.ssense.com/ssenseweb/image/upload/c_lpad,g_south,h_1086,w_724/c_scale,h_560/v808753779/42259M032001_1.jpg",
-			positions:{
-				top:4,
-				left:9
-			},
-			sizes:{
-				width:8,
-				height:10
+				height:3
 			}
 		},
 		{
 			type:"image_title",
-			url:"http://www.ssense.com",
-			title:"We are the best TITLE",
-			src:"https://static1.ssense.com/ssenseweb/image/upload/c_lpad,g_south,h_1086,w_724/c_scale,h_560/v1626112192/42266M004001_1.jpg",
-			custom_css:"<style>.whatever{display:none;}</style>",
+			url:"www.ssense.com",
+			title:"Sandals",
+			src:"",
 			positions:{
-				top:8,
-				left:3
+				top:3,
+				left:6
 			},
 			sizes:{
-				width:10,
+				width:4,
 				height:2
-			}
-		},
-		{
-			type:"image_text",
-			url:"http://www.ssense.com",
-			title:"We are the best TEXT yes",
-			src:"https://static1.ssense.com/ssenseweb/image/upload/c_lpad,g_south,h_1086,w_724/c_scale,h_560/v1850731820/42092M032001_1.jpg",
-			custom_css:"#432423423 {display:none;}</style>",
-			positions:{
-				top:2,
-				left:5
-			},
-			sizes:{
-				width:4,
-				height:10
-			}
-		},
-		{
-			type:"image_text",
-			url:"http://www.ssense.com",
-			title:"We are the best TEXT",
-			src:"https://static1.ssense.com/ssenseweb/image/upload/c_lpad,g_south,h_1086,w_724/c_scale,h_560/v580910961/42259M004002_1.jpg",
-			custom_css:"<style>.whatever{display:none;}</style>",
-			positions:{
-				top:2,
-				left:5
-			},
-			sizes:{
-				width:4,
-				height:10
 			}
 		},
 		{
 			type:"text",
 			url:"http://www.ssense.com",
-			title:"We are the best",
-			desc:"this is a desc",
+			title:"The Sale\nNever Ends",
+			desc:"Up To 70%",
 			custom_css:"<style>.whatever{display:none;}</style>",
 			positions:{
-				top:2,
-				left:5
+				top:4,
+				left:1
 			},
 			sizes:{
-				width:4,
-				height:10
+				width:3,
+				height:3
+			}
+		},
+		{
+			type:"image_title",
+			url:"http://www.ssense.com",
+			title:"Chloé",
+			src:"",
+			custom_css:"<style>.whatever{display:none;}</style>",
+			positions:{
+				top:4,
+				left:4
+			},
+			sizes:{
+				width:2,
+				height:4
+			}
+		},
+		{
+			type:"image_title",
+			url:"http://www.ssense.com",
+			title:"Flats",
+			src:"",
+			custom_css:"<style>.whatever{display:none;}</style>",
+			positions:{
+				top:5,
+				left:7
+			},
+			sizes:{
+				width:5,
+				height:2
+			}
+		},
+		{
+			type:"image_title",
+			url:"http://www.ssense.com",
+			title:"Sneakers",
+			src:"",
+			custom_css:"#432423423 {display:none;}</style>",
+			positions:{
+				top:8,
+				left:1
+			},
+			sizes:{
+				width:5,
+				height:3
+			}
+		},
+		{
+			type:"text",
+			url:"http://www.ssense.com",
+			title:"New\nThis Week",
+			desc:"View Now",
+			custom_css:"<style>.whatever{display:none;}</style>",
+			positions:{
+				top:8,
+				left:6
+			},
+			sizes:{
+				width:3,
+				height:3
+			}
+		},
+		{
+			type:"image_title",
+			url:"http://www.ssense.com",
+			title:"Versace",
+			src:"",
+			custom_css:"<style>.whatever{display:none;}</style>",
+			positions:{
+				top:7,
+				left:9
+			},
+			sizes:{
+				width:2,
+				height:5
 			}
 		}]
 });

@@ -18,9 +18,9 @@
 
 var React = require('react');
 var componentArray = [];
-componentArray.image_title = require('./ComponentImageText');
+componentArray.image_title = require('./ComponentImageTitle');
 componentArray.product = require('./ComponentProduct');
-componentArray.image_text = require('./ComponentImageTitle');
+componentArray.image_text = require('./ComponentImageText');
 componentArray.text = require('./ComponentText');
 componentArray.image = require('./ComponentImage');
 

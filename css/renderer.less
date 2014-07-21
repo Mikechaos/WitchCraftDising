@@ -21,13 +21,20 @@
  * Therefore this needs to be displayed normally by default.
  */
 
+html,body {
+	height: 100%;
+	background: white;
+}
+
+#renderer {
+} 
 
 .visual_components{
 	position:relative;
 
 	.visual_component{
 		position:absolute;
-		background:#000;
+		border: 1px solid #eee;
 	}
 	
 	/* POSITIONNING */
@@ -56,4 +63,104 @@
 	  .mixin-loop(@i - 1);
 	}
 	.mixin-loop(@iterations);
+
+
+
 }
+
+/* COMPONENTS */
+
+
+.visual_component {
+
+	a:link, a:visited {
+		color: black;
+		text-decoration: none;
+	}
+
+	&:hover {
+		opacity: 0.8;
+	}
+
+	img {
+		width: auto;
+		max-width: 100%;
+		height: 85%;
+	}
+	
+	&.product {
+
+	}
+
+	&.image {
+
+	}
+	
+	&.image_title {
+		
+		div {
+			position: relative;
+			height: 100%;
+		}
+
+		h2 {
+			text-transform: uppercase;
+			font-size: 16px;
+			line-height: 30px;
+			position:absolute;
+			bottom:0;
+			text-align: center;
+			width: 100%;
+		}
+
+	}
+
+	&.image_text {
+		
+	}
+
+	&.text {
+			display: table;
+
+		div {
+			display: table-cell;
+			text-align: center;
+			vertical-align: middle;
+			}
+
+		h2 {
+			color: black;
+			font-size:36px;
+			line-height:40px;
+			margin: 0 0 0.5em 0;
+		}
+
+		hr {
+			width: 60px;
+			margin: auto;
+			border: 0;
+			height: 2px;
+			background: black;
+		}
+
+		h3 {
+			color: black;
+			font-size: 14px;
+			line-height: 24px;
+			// &:before {
+			// 	content:"\2014";
+			// 	text-align: center;
+			// 	display: block;
+			// }
+		}
+
+	}
+
+}
+
+
+
+
+
+
+

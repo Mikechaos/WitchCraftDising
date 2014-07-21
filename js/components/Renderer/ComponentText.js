@@ -25,12 +25,13 @@ var componentText = React.createClass({
    */
   render: function() {
     var component = this.props.component;
-    var positionsClasses = "visual_component top"+component.positions.top+" left"+component.positions.left+" width"+component.sizes.width+" height"+component.sizes.height+" "+component.type;
-
+    
     return (
-      <div className={positionsClasses}>
-        <a href={component.url}><img src={component.src} alt={component.title} />
+      <div>
+        <a href={component.url}>
         <h2>{component.title}</h2>
+        <hr />
+        <h3>{component.desc}</h3>
         </a>
       </div>
     );

@@ -25,10 +25,8 @@ var ComponentImageTitle = React.createClass({
    */
   render: function() {
     var component = this.props.component;
-    var positionsClasses = "visual_component top"+component.positions.top+" left"+component.positions.left+" width"+component.sizes.width+" height"+component.sizes.height+" "+component.type;
-
     return (
-      <div className={positionsClasses}>
+      <div>
         <a href={component.url}><img src={component.src} alt={component.title} />
         <h2>{component.title}</h2>
         </a>
