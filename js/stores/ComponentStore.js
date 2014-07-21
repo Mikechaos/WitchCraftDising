@@ -159,8 +159,9 @@ function updateAll(updates) {
  * Delete a component item.
  * @param  {string} id
  */
-function destroy(id) {
-  _componentStore.unset(id);
+function addItem(item) {
+  //_componentStore.unset(id);
+  console.log(item);
 }
 
 /**
@@ -186,6 +187,11 @@ var componentStore = _.extend(_componentStore, {
     });
   },
 
+
+  addItem: function(item){
+  	console.log(item);
+  },
+
   /**
    * Get the entire collection of components.
    * @return {object}
@@ -204,14 +210,6 @@ AppDispatcher.on('all', function(eventName, payload) {
       text = payload.text.trim();
       if (text !== '') {
         create(text);
-      }
-      break;
-
-    case 'toggleCompleteAll':
-      if (componentStore.areAllComplete()) {
-        updateAll({complete: false});
-      } else {
-        updateAll({complete: true});
       }
       break;
 
