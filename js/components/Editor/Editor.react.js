@@ -49,7 +49,7 @@ var Editor = React.createClass({
   },
 
   componentWillMount: function () {
-    this.state.width = $('#editor').width();
+    this.state.size = $('#editor').width() / GridStore.get('cols');
     GridStore.on('change:grid', _.bind(function (model, grid) {
       this.setProps({grid: grid});
     }, this));
@@ -57,6 +57,8 @@ var Editor = React.createClass({
   },
 
   initGrid: function () {
+    this.rowCount = GridStore.get('rows');
+    this.colCount = GridStore.get('cols');
     this.rowElems = {
       num: 0,
       items: []
@@ -74,7 +76,7 @@ var Editor = React.createClass({
 
   addRow: function () {
     this.rowElems.items = this.buildRow();
-    this.rows.push(<GridRow items={this.rowElems.items} key={"gridRow" + this.rowElems.num}/>)
+    this.rows.push(<GridRow items={this.rowElems.items} key={"gridRow" + this.rowElems.num} rowCount={this.rowCount} />)
   },
 
   buildRow: function (row, col) {
@@ -86,7 +88,7 @@ var Editor = React.createClass({
     if (this.props.grid.length === 0) { var state = false; }
     else { var state = this.props.grid[this.rowElems.num][col]; }
 
-    row.push(<GridItem row={this.rowElems.num} col={col} key={"gridItem" + this.rowElems.num + "_" + col} highlight={state} />);
+    row.push(<GridItem row={this.rowElems.num} col={col} key={"gridItem" + this.rowElems.num + "_" + col} highlight={state} colCount={this.colCount}/>);
 
     return this.buildRow(row, col + 1);
   },
@@ -105,17 +107,18 @@ var Editor = React.createClass({
     this.mapGrid();
     var style = {
       "background-color": "white",
-      width: this.state.width,
-      height: this.state.width,
-      "min-width": "600px"
+      width: this.state.size * GridStore.get('cols'),
+      height: this.state.size * GridStore.get('rows'),
+      "min-width": "600px",
+      position: "relative"
     }
     return (
         <div className="mainSection">
           <Sidebar />
           <div className="editor">
             <Header />
-            <Renderer />
             <div id={"editor-view"} style={style} onMouseDown={this.startDragging} onMouseUp={this.stopDragging}>
+              <Renderer />
               <GridView rows={this.rows} grid={this.props.grid} />
             </div>
           </div>
