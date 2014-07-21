@@ -26,7 +26,7 @@ var GridView = require('./grid/GridView.react');
 var AppDispatcher = require("../../dispatcher/AppDispatcher");
 var GridAction = require("../../actions/GridAction");
 var GridStore = require("../../stores/GridStore");
-
+var Renderer = require('../Renderer/Renderer.react');
 var modals = {
     showPublish: false,
 };
@@ -107,14 +107,14 @@ var Editor = React.createClass({
       "background-color": "white",
       width: this.state.width,
       height: this.state.width,
-      "min-width": "600px",
-      "padding-top": "5px"
+      "min-width": "600px"
     }
     return (
         <div className="mainSection">
           <Sidebar />
           <div className="editor">
             <Header />
+            <Renderer />
             <div id={"editor-view"} style={style} onMouseDown={this.startDragging} onMouseUp={this.stopDragging}>
               <GridView rows={this.rows} grid={this.props.grid} />
             </div>
