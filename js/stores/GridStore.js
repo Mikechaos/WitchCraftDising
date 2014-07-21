@@ -100,6 +100,10 @@ GridComponent = {
   isIncludedInRect: function (row, col) {
     return row >= this.origin.row && col >= this.origin.col &&
            row <= this.target.row && col <= this.target.col;
+  },
+
+  hide:function(){
+    
   }
 
 };
