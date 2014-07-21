@@ -67,7 +67,7 @@ var TodoApp = React.createClass({
    * Event handler for 'change' events coming from the TodoStore
    */
   _onChange: function() {
-    this.setState(getTodoState());
+    this.setState(getComponents());
   }
 
 });
