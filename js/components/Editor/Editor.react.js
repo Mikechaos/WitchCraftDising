@@ -131,6 +131,7 @@ var Editor = React.createClass({
       "min-width": "600px",
       position: "relative"
     }
+
     return (
         <div className="mainSection">
           <Sidebar />

@@ -126,6 +126,7 @@ form.formSelection.categories .el_description {
   background-color: #000;
   width: 100%;
   height: 100%;
+  cursor: url(../images/x.png), auto;
 }
 .modal .modal-content {
   display: none;
@@ -351,7 +352,6 @@ body {
   background: pink;
 }
 #editor {
-  width: auto !important;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;

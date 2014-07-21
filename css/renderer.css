@@ -171,6 +171,9 @@
   left: 0vw;
 }
 /* COMPONENTS */
+.visual_component {
+  background: white;
+}
 .visual_component a:link,
 .visual_component a:visited {
   color: black;
@@ -178,6 +181,7 @@
 }
 .visual_component:hover {
   opacity: 0.8;
+  cursor: move;
 }
 .visual_component img {
   width: auto;
