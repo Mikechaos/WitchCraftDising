@@ -114,8 +114,8 @@ var Editor = React.createClass({
 
   mapGrid: function () {
     if (this.props.grid.length === 0) { return false; }
-    for (var i = 0; i < 12; ++i) {
-      for (var j = 0; j < 12; ++j) {
+    for (var i = 0; i < GridStore.get('rows'); ++i) {
+      for (var j = 0; j < GridStore.get('cols'); ++j) {
         var state = this.props.grid[i][j]
         this.rows[i].props.items[j].setState({highlight: state});
       }
