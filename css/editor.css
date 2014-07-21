@@ -299,8 +299,27 @@ form.formSelection.categories .el_description {
   bottom: 0;
   left: 0;
   width: 100%;
+}
+#sidebar .user a {
   background: white;
-  height: 50px;
+  display: block;
+  height: 75px;
+  line-height: 75px;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 500;
+  text-decoration: none;
+  color: black;
+}
+#sidebar .user a img {
+  vertical-align: middle;
+  margin: 0 0.75em 5px 0;
+}
+#sidebar .user a:hover {
+  background: #fafafa;
+}
+#sidebar .user .profile {
+  border-radius: 15px;
 }
 #todo-list li .edit {
   display: inline;
@@ -321,6 +340,7 @@ body {
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 ::-moz-selection {
   color: #555;

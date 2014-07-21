@@ -34,7 +34,9 @@ var Sidebar = React.createClass({
           <a href="#" onClick={this.createPage}><i className="fa fa-plus"></i> New page</a>
           <a href="#" onClick={this.createPage}><i className="fa fa-trash-o"></i> Trash</a>
         </div>
-        <div className="user"></div>
+        <div className="user">
+          <a href="#"><img src="images/jack.png" className="profile" />Jack Allen <i className="fa fa-caret-down"></i></a>
+        </div>
       </div>
     );
   },
