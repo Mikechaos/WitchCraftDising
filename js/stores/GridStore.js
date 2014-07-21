@@ -95,7 +95,19 @@ GridComponent = {
       grid.push(row);
     }
 
+    this.calculateRender();
     GridStore.set('grid', grid);
+  },
+
+  calculateRender: function () {
+    var rendererProp = {
+      top: this.origin.row + 1,
+      height: this.target.row + 1 - this.origin.row,
+      left: this.origin.col + 1,
+      width: this.target.col + 1 - this.origin.col
+    }
+
+    GridStore.set('rendererProp', rendererProp);
   },
 
   isIncludedInRect: function (row, col) {
