@@ -25,7 +25,6 @@ componentArray.text = require('./ComponentText');
 componentArray.image = require('./ComponentImage');
 
 
-
 var BaseComponent = React.createClass({
 
   /**

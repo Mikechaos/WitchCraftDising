@@ -19,6 +19,12 @@
  * We are not changing from display:none, but rather re-rendering instead. 
  * Therefore this needs to be displayed normally by default.
  */
+.visible {
+  display: block;
+}
+.hidden {
+  display: none;
+}
 .visual_components {
   position: relative;
   /* POSITIONNING */

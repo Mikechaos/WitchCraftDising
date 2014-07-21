@@ -43,11 +43,12 @@ var Header = React.createClass({
           <div className="right-tools">
             <a href="#" className="btn nobg" onClick={this._hideGrid}><i className="fa fa-th"></i>Hide grid</a>
             <a href="#" className="btn" onClick={this._save.bind(this,"ModalSelection")}><i className="fa fa-floppy-o"></i>Save / preview</a>
-            <Modal body={ModalSelection} id="ModalSelection" />
             <a href="#" className="btn" onClick={this._showPublish.bind(this,"ModalPublish")}><i className="fa fa-cloud-upload"></i> Publish</a>
             <Modal body={ModalPublish} id="ModalPublish" />
+
           </div>
         </div>
+        <Modal body={ModalSelection} id="ModalSelection" />
       </header>
   	);
   },
@@ -64,8 +65,7 @@ var Header = React.createClass({
 
   },
   _save : function (id, e) {
-    e.preventDefault();
-    ModalActions.show({id:id});
+
   },
   _showPublish : function (id, e) {
     e.preventDefault();

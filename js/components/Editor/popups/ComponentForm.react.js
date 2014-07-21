@@ -29,11 +29,25 @@ var ComponentSelection = React.createClass({
         e.stopPropagation();
     },
     render: function() {
+        var classSet = "formSelection "+" "+this.props.type+" "+this.props.showForm;
         return (
-            <div className="modalSelection" role="dialog" aria-hidden="true">
-                <h2>Select your marketing weapon of choice</h2>
-                
-            </div>
+            <form className={classSet} method="post" >
+                <h2>Insert your component</h2>
+                <label className="el_link">Link</label>
+                <input type="text" className="el_link" />
+
+                <label className="el_img">Image</label>
+                <input type="text" className="el_img" />
+
+                <label className="el_title">Title</label>
+                <input type="text" className="el_title" />
+
+                <label className="el_description">Description</label>
+                <input type="text" className="el_description" />
+                <div className="modal-tools">
+                    <button type="submit" className="btn">Insert</button>
+                </div>
+            </form>
         );
     }
 });
