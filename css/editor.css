@@ -87,15 +87,12 @@
   font-style: italic;
 }
 form.formSelection label {
+  clear: both;
   display: block;
+  margin: auto;
+  text-indent: center;
   width: 50%;
-  float: left;
   padding: 10px 0;
-}
-form.formSelection input {
-  display: block;
-  width: 50%;
-  float: left;
 }
 form.formSelection .modal-tools {
   padding-top: 20px;
@@ -155,10 +152,17 @@ form.formSelection.categories .el_description {
   line-height: 26px;
   border: #aaa 1px solid;
   text-align: center;
+  width: 50%;
 }
 .modal .modal-content input:focus {
   outline: 0;
   border-color: black;
+}
+.modal .modal-content #pageurl {
+  margin: auto;
+  width: 50%;
+  float: none;
+  border: #aaa 1px solid;
 }
 .modalSelection {
   text-align: center;
