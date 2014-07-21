@@ -18,15 +18,26 @@
 
 var React = require('react');
 var _ = require('underscore');
+
+var AppDispatcher = require("../../dispatcher/AppDispatcher");
+
 var Header = require('./Header.react');
 var Sidebar = require('./Sidebar.react');
+
+var GridAction = require("../../actions/GridAction");
 var GridItem = require('./grid/GridItem.react');
 var GridRow = require('./grid/GridRow.react');
-var GridView = require('./grid/GridView.react');
-var AppDispatcher = require("../../dispatcher/AppDispatcher");
-var GridAction = require("../../actions/GridAction");
 var GridStore = require("../../stores/GridStore");
+var GridView = require('./grid/GridView.react');
+
+var Modal = require('./popups/PopupBase.react');
+var ModalActions = require('../../actions/ModalActions.js');
+var ModalPublish = require('./popups/Publish.react');
+var ModalSelection = require('./popups/ComponentSelection.react');
+
 var Renderer = require('../Renderer/Renderer.react');
+
+
 var modals = {
     showPublish: false,
 };
@@ -44,7 +55,8 @@ var Editor = React.createClass({
         row: 0,
         col: 0
       },
-      width: 0
+      width: 0,
+      rect: {}
     };
   },
 
@@ -53,6 +65,13 @@ var Editor = React.createClass({
     GridStore.on('change:grid', _.bind(function (model, grid) {
       this.setProps({grid: grid});
     }, this));
+
+    GridStore.on('change:rect', _.bind(function (model, rect) {
+      console.log('rect in on change', rect);
+      this.setState({rect: rect});
+      this.forceUpdate();
+    }, this));
+
     this.initGrid();
   },
 
@@ -88,7 +107,7 @@ var Editor = React.createClass({
     if (this.props.grid.length === 0) { var state = false; }
     else { var state = this.props.grid[this.rowElems.num][col]; }
 
-    row.push(<GridItem row={this.rowElems.num} col={col} key={"gridItem" + this.rowElems.num + "_" + col} highlight={state} colCount={this.colCount} rect={Gridstore.get('rect')} />);
+    row.push(<GridItem row={this.rowElems.num} col={col} key={"gridItem" + this.rowElems.num + "_" + col} highlight={state} colCount={this.colCount} />);
 
     return this.buildRow(row, col + 1);
   },
@@ -121,6 +140,7 @@ var Editor = React.createClass({
               <Renderer />
               <GridView rows={this.rows} grid={this.props.grid} />
             </div>
+            <Modal body={ModalSelection} id="ModalSelection" rect={this.state.rect} />
           </div>
         </div>
     );

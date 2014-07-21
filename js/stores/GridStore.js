@@ -36,7 +36,9 @@ GridComponent = {
   createRect: function (origin, target) {
     this.composePoints(origin, target);
 
-    this.calculateRect();
+    if (this.calculateRender()) {
+      this.calculateRect();
+    }
   },
 
   composePoints: function (origin, target) {
@@ -95,19 +97,28 @@ GridComponent = {
       grid.push(row);
     }
 
-    this.calculateRender();
     GridStore.set('grid', grid);
   },
 
   calculateRender: function () {
     var rect = {
-      top: this.origin.row + 1,
-      height: this.target.row + 1 - this.origin.row,
-      left: this.origin.col + 1,
-      width: this.target.col + 1 - this.origin.col
+      positions: {
+        top: this.origin.row + 1,
+        left: this.origin.col + 1
+      },
+      sizes: {
+        height: this.target.row + 1 - this.origin.row,
+        width: this.target.col + 1 - this.origin.col
+      }
+    }
+
+    if (rect.sizes.height === 1 && rect.sizes.width === 1) {
+      return false;
     }
 
     GridStore.set('rect', rect);
+
+    return true;
   },
 
   isIncludedInRect: function (row, col) {

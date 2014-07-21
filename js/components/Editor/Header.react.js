@@ -19,7 +19,6 @@
 var React = require('react');
 var Modal = require('./popups/PopupBase.react');
 var ModalPublish = require('./popups/Publish.react');
-var ModalSelection = require('./popups/ComponentSelection.react');
 var ModalActions = require('../../actions/ModalActions.js');
 var ComponentStore = require('../../stores/ComponentStore.js');
 var ENTER_KEY_CODE = 13;
@@ -48,7 +47,6 @@ var Header = React.createClass({
 
           </div>
         </div>
-        <Modal body={ModalSelection} id="ModalSelection" />
       </header>
   	);
   },

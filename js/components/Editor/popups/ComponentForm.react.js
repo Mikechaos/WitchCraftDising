@@ -19,6 +19,8 @@ var React = require('react');
 var ComponentStore = require('../../../stores/ComponentStore.js');
 var ModalActions = require('../../../actions/ModalActions');
 
+var GridStore = require("../../../stores/GridStore");
+
 
 var ComponentSelection = React.createClass({
     componentDidMount: function() {
@@ -29,12 +31,17 @@ var ComponentSelection = React.createClass({
     },
 
     addItem: function(e) {
+        var rect = GridStore.get('rect');
+        debugger;
         e.preventDefault();
         var data = {
-            link :  this.refs.link.getDOMNode().value.trim(),
-            img :  this.refs.img.getDOMNode().value.trim(),
+            url :  this.refs.link.getDOMNode().value.trim(),
+            src :  this.refs.img.getDOMNode().value.trim(),
             title :  this.refs.title.getDOMNode().value.trim(),
-            descrition :  this.refs.descrition.getDOMNode().value.trim(),
+            type: this.props.type,
+            desc :  this.refs.descrition.getDOMNode().value.trim(),
+            positions: rect.positions,
+            sizes: rect.sizes
         };
         ComponentStore.addItem(data);
         ModalActions.destroy();

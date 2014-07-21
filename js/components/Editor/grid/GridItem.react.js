@@ -41,7 +41,7 @@ var GridItem = React.createClass({
     classNames = 'grid-item';
 
     if (this.state.highlight) {
-      classNames += " highlight";
+      classNames += ' highlight';
     }
 
     return (
@@ -73,7 +73,7 @@ var GridItem = React.createClass({
     if(this.state.active){
       e.preventDefault();
       e.stopPropagation();
-      ModalActions.show({id:"ModalSelection"});      
+      ModalActions.show({id:"ModalSelection"});
     }
   }
 

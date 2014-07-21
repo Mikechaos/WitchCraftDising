@@ -24,7 +24,7 @@ var ComponentSelection = React.createClass({
         return {
           showForm: "hidden",
           showSelection: "visible",
-          type : ""
+          type : "",
         };
     },
     componentDidMount: function() {
@@ -39,10 +39,11 @@ var ComponentSelection = React.createClass({
         this.setState({
             showForm: "visible",
             showSelection: "hidden",
-            type:type
+            type:type,
         });
     },
     render: function() {
+        console.log('dladklasdkasldkas', this.props);
         var classSet = "modalSelection " + this.state.showSelection;
         return (
             <div  role="dialog" aria-hidden="true">
@@ -53,11 +54,11 @@ var ComponentSelection = React.createClass({
                             <img src="images/sales.png" />
                             <span>Image</span>
                         </a>
-                        <a onClick={this.showForm.bind(this,"categories")} href="#">
+                        <a onClick={this.showForm.bind(this,"image_text")} href="#">
                             <img src="images/categories.png" />
                             <span>Categories</span>
                         </a>
-                        <a onClick={this.showForm.bind(this,"products")} href="#">
+                        <a onClick={this.showForm.bind(this,"product")} href="#">
                             <img src="images/products.png" />
                             <span>Products</span>
                         </a>
@@ -67,7 +68,7 @@ var ComponentSelection = React.createClass({
                         </a>
                     </div>
                 </div>
-                <Form type={this.state.type} showForm={this.state.showForm} />
+                <Form type={this.state.type} showForm={this.state.showForm} rect={this.props.rect}/>
             </div>
         );
     }
