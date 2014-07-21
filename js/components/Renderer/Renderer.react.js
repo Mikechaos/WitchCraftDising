@@ -25,9 +25,6 @@ var BaseComponent = require('./BaseComponent.react');
 var ComponentStore = require('../../stores/ComponentStore');
 var React = require('react');
 
-/**
- * Retrieve the current TODO data from the TodoStore
- */
 function getComponents() {
   return {
     allComponents: ComponentStore.getAll()

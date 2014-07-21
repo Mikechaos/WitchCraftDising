@@ -40,17 +40,17 @@
 	  @size : @i*8.333;
 	  @pos : @i*8.333-8.333; 
 	  div.width@{i}{
-	  	width:unit(@size, %);
+	  	width:unit(@size, vw);
 	  }
 	  div.height@{i}{
-	  	height: unit(@size, %);
+	  	height: unit(@size, vw);
 	  }
 
 	  div.top@{i}{
-	  	top: unit(@pos, %);
+	  	top: unit(@pos, vw);
 	  }
 	  div.left@{i}{
-	  	left: unit(@pos, %);
+	  	left: unit(@pos, vw);
 	  }
 
 	  .mixin-loop(@i - 1);
