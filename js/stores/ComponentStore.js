@@ -32,7 +32,7 @@ var _componentStore = new Backbone.Model({
 			type:"image_title",
 			url:"www.ssense.com",
 			title:"Heels",
-			src:"",
+			src:"https://res.cloudinary.com/ssenseweb/image/upload/v1405959698/visual/render_heels.jpg",
 			positions:{
 				top:1,
 				left:2
@@ -46,7 +46,7 @@ var _componentStore = new Backbone.Model({
 			type:"image_title",
 			url:"www.ssense.com",
 			title:"Sandals",
-			src:"",
+			src:"https://res.cloudinary.com/ssenseweb/image/upload/v1405959698/visual/render_sandals.jpg",
 			positions:{
 				top:3,
 				left:6
@@ -75,7 +75,7 @@ var _componentStore = new Backbone.Model({
 			type:"image_title",
 			url:"http://www.ssense.com",
 			title:"Chloé",
-			src:"",
+			src:"https://res.cloudinary.com/ssenseweb/image/upload/v1405959698/visual/render_chloe.jpg",
 			custom_css:"<style>.whatever{display:none;}</style>",
 			positions:{
 				top:4,
@@ -90,7 +90,7 @@ var _componentStore = new Backbone.Model({
 			type:"image_title",
 			url:"http://www.ssense.com",
 			title:"Flats",
-			src:"",
+			src:"https://res.cloudinary.com/ssenseweb/image/upload/v1405959698/visual/render_flats.jpg",
 			custom_css:"<style>.whatever{display:none;}</style>",
 			positions:{
 				top:5,
@@ -105,7 +105,7 @@ var _componentStore = new Backbone.Model({
 			type:"image_title",
 			url:"http://www.ssense.com",
 			title:"Sneakers",
-			src:"",
+			src:"https://res.cloudinary.com/ssenseweb/image/upload/v1405959698/visual/render_sneakers.jpg",
 			custom_css:"#432423423 {display:none;}</style>",
 			positions:{
 				top:8,
@@ -135,7 +135,7 @@ var _componentStore = new Backbone.Model({
 			type:"image_title",
 			url:"http://www.ssense.com",
 			title:"Versace",
-			src:"",
+			src:"https://res.cloudinary.com/ssenseweb/image/upload/v1405959698/visual/render_versace.jpg",
 			custom_css:"<style>.whatever{display:none;}</style>",
 			positions:{
 				top:7,

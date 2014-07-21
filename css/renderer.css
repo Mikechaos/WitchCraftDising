@@ -31,7 +31,6 @@
 }
 .visual_components .visual_component {
   position: absolute;
-  border: 1px solid #eee;
 }
 .visual_components .width12 {
   width: 100%;
@@ -172,6 +171,10 @@
   left: 0vw;
 }
 /* COMPONENTS */
+html,
+body {
+  background: white;
+}
 .visual_component a:link,
 .visual_component a:visited {
   color: black;
@@ -197,6 +200,7 @@
   bottom: 0;
   text-align: center;
   width: 100%;
+  letter-spacing: 0.1em;
 }
 .visual_component.text {
   display: table;
