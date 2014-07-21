@@ -1,4 +1,5 @@
 #sidebar{
+	
 	position:fixed;
 	left:0; top:0;
 	width:183px; height:100%;
@@ -9,17 +10,34 @@
 	.tools-pages{
 		a{
 			display:block;
-			padding:10px;
+			padding:1.2em 2em;
 			color:#fff;
 			text-decoration:none;
-			border-bottom: 1px solid #000;
-			font-size:12px;
+			font-size:11px;
+			text-transform: uppercase;
 			&:hover{
 				background: #1d1d1d;
 			}
 			i{
-				margin-right:5px;
+				margin-right:1em;
+				font-size: 1.3em;
 			}
 		}
+
+		.back {
+			height: 48px;
+			line-height: 48px;
+			border-bottom: 1px solid #000;
+
+		}
+	}
+
+	.user {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		background: white;
+		height: 50px;
 	}
 }

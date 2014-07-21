@@ -29,9 +29,12 @@ var Sidebar = React.createClass({
       <div id="sidebar">
         <img className="logo" src="images/ssense_logo.png" />
         <div className="tools-pages">
-          <a href="#" onClick={this.createPage}><i className="fa fa-plus-square"></i> New pages</a>
-          <div className="pages-listing">test</div>
+          <a href="#" className="back"><i className="fa fa-arrow-left"></i> Back To Apps</a>
+          <a href="#"><i className="fa fa-list"></i> All Pages</a>
+          <a href="#" onClick={this.createPage}><i className="fa fa-plus"></i> New page</a>
+          <a href="#" onClick={this.createPage}><i className="fa fa-trash-o"></i> Trash</a>
         </div>
+        <div className="user"></div>
       </div>
     );
   },

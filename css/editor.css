@@ -197,6 +197,9 @@ form.formSelection.categories .el_description {
 }
 #header {
   height: 140px;
+  background: #f1f1f1;
+  width: 100%;
+  display: block;
 }
 #header h1 {
   display: block;
@@ -216,10 +219,10 @@ form.formSelection.categories .el_description {
   border: none;
   float: left;
   font-size: 20px;
-  height: 20px;
+  height: 30px;
   outline: none;
   width: 400px;
-  padding: 10px;
+  padding: 10px 0;
 }
 #header .tools .right-tools {
   float: right;
@@ -243,25 +246,41 @@ form.formSelection.categories .el_description {
 }
 #sidebar .tools-pages a {
   display: block;
-  padding: 10px;
+  padding: 1.2em 2em;
   color: #fff;
   text-decoration: none;
-  border-bottom: 1px solid #000;
-  font-size: 12px;
+  font-size: 11px;
+  text-transform: uppercase;
 }
 #sidebar .tools-pages a:hover {
   background: #1d1d1d;
 }
 #sidebar .tools-pages a i {
-  margin-right: 5px;
+  margin-right: 1em;
+  font-size: 1.3em;
+}
+#sidebar .tools-pages .back {
+  height: 48px;
+  line-height: 48px;
+  border-bottom: 1px solid #000;
+}
+#sidebar .user {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  height: 50px;
 }
 #todo-list li .edit {
   display: inline;
 }
 html,
 body {
+  padding: 0;
+  margin: 0;
   font-family: 'Gotham SSm A', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  background: #f1f1f1;
+  background: #white;
   color: #000;
   speak: none;
   font-style: normal;
@@ -273,8 +292,21 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+::-moz-selection {
+  color: #555;
+  background: pink;
+}
+::selection {
+  color: #555;
+  background: pink;
+}
+#editor {
+  width: auto !important;
+}
 .editor {
   margin-left: 183px;
+  padding: 11px 30px;
+  background: #f1f1f1;
 }
 .modalSelection {
   text-align: center;
@@ -300,12 +332,16 @@ input {
   width: inherit;
 }
 .grid-row .grid-item {
-  border: solid grey 1px;
+  border: solid #f1f1f1 1px;
   height: 100%;
   display: inline-block;
   float: left;
   box-sizing: border-box;
 }
-.grid-row .grid-item .highlight {
+.grid-row .grid-item.highlight {
   border: solid pink 1px;
+}
+.grid-row .grid-item:hover {
+  border: solid #e1e1e1 1px;
+  cursor: crosshair;
 }

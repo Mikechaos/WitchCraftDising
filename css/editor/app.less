@@ -2,8 +2,10 @@
   display: inline;
 }
 html,body{
+	padding: 0;
+	margin: 0;
 	font-family: 'Gotham SSm A', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	background: #f1f1f1;
+	background: #white;
 	color:#000;
 
 	speak: none;
@@ -18,8 +20,17 @@ html,body{
 	-moz-osx-font-smoothing: grayscale;
 }
 
+::-moz-selection { color: #555;background: pink;}
+::selection      { color: #555;background: pink; } 
+
+#editor {
+	width: auto !important;
+}
+
 .editor{
 	margin-left:183px;
+	padding: 11px 30px;
+	background: #f1f1f1;
 }
 
 
@@ -45,18 +56,22 @@ input {
 }
 
 .grid-row {
-
     width: inherit;
 
 	.grid-item {
-		border: solid grey 1px;
+		border: solid #f1f1f1 1px;
 		height: 100%;
 		display: inline-block;
 		float: left;
 		box-sizing: border-box;
 
-		.highlight {
+		&.highlight {
 			border: solid pink 1px;
+		}
+
+		&:hover {
+			border: solid #e1e1e1 1px;
+			cursor: crosshair;
 		}
 	}
 }
