@@ -32,24 +32,7 @@ var ComponentSelection = React.createClass({
         return (
             <div className="modalSelection" role="dialog" aria-hidden="true">
                 <h2>Select your marketing weapon of choice</h2>
-                <div class="selection">
-                    <a href="#">
-                        <img src="images/sales.png" />
-                        <span>Image</span>
-                    </a>
-                    <a href="#">
-                        <img src="images/categories.png" />
-                        <span>Categories</span>
-                    </a>
-                    <a href="#">
-                        <img src="images/products.png" />
-                        <span>Products</span>
-                    </a>
-                    <a href="#">
-                        <img src="images/text.png" />
-                        <span>text</span>
-                    </a>
-                </div>
+                
             </div>
         );
     }

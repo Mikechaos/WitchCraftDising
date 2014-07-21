@@ -18,7 +18,7 @@
 
 var React = require('react');
 
-var componentText = React.createClass({
+var ComponentProduct = React.createClass({
 
   /**
    * @return {object}
@@ -30,7 +30,7 @@ var componentText = React.createClass({
     return (
       <div className={positionsClasses}>
         <a href={component.url}><img src={component.src} alt={component.title} />
-        <h2>{component.title}</h2>
+        <p>{component.title}</p>
         </a>
       </div>
     );
@@ -47,4 +47,4 @@ var componentText = React.createClass({
 
 });
 
-module.exports = componentText;
+module.exports = ComponentProduct;

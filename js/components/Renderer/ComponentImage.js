@@ -18,7 +18,7 @@
 
 var React = require('react');
 
-var componentText = React.createClass({
+var ComponentImage = React.createClass({
 
   /**
    * @return {object}
@@ -29,9 +29,7 @@ var componentText = React.createClass({
 
     return (
       <div className={positionsClasses}>
-        <a href={component.url}><img src={component.src} alt={component.title} />
-        <h2>{component.title}</h2>
-        </a>
+        <a href={component.url}><img src={component.src} alt={component.title} /></a>
       </div>
     );
   },
@@ -47,4 +45,4 @@ var componentText = React.createClass({
 
 });
 
-module.exports = componentText;
+module.exports = ComponentImage;

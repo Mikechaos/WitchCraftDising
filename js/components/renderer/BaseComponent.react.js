@@ -17,8 +17,14 @@
  */
 
 var React = require('react');
-var ImageText = require('./ComponentImageText');
-var ImgageTitle = require('./ComponentImageTitle');
+var componentArray = [];
+componentArray.image_title = require('./ComponentImageText');
+componentArray.product = require('./ComponentProduct');
+componentArray.image_text = require('./ComponentImageTitle');
+componentArray.text = require('./ComponentText');
+componentArray.image = require('./ComponentImage');
+
+
 
 var BaseComponent = React.createClass({
 
@@ -28,12 +34,8 @@ var BaseComponent = React.createClass({
   render: function() {
     var component = this.props.component;
     var positionsClasses = "visual_component top"+component.positions.top+" left"+component.positions.left+" width"+component.sizes.width+" height"+component.sizes.height+" "+component.type;
-    var node;
-    if(component.type === "image_title"){
-      Node = ImgageTitle;
-    }else{
-      Node = ImageText;
-    }
+    var Node = componentArray[component.type];
+
     return (
       <div className={positionsClasses}>
         <Node component={component} />
