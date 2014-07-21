@@ -16,6 +16,9 @@
  * @jsx React.DOM
  */
 var React = require('react');
+var ComponentStore = require('../../../stores/ComponentStore.js');
+var ModalActions = require('../../../actions/ModalActions');
+
 
 var ComponentSelection = React.createClass({
     componentDidMount: function() {
@@ -24,16 +27,39 @@ var ComponentSelection = React.createClass({
     componentWillUnmount: function() {
       
     },
-    // This was the key fix --- stop events from bubbling
-    handleClick: function(e) {
-        e.stopPropagation();
+
+    addItem: function(e) {
+        e.preventDefault();
+        var data = {
+            link :  this.refs.link.getDOMNode().value.trim(),
+            img :  this.refs.img.getDOMNode().value.trim(),
+            title :  this.refs.title.getDOMNode().value.trim(),
+            descrition :  this.refs.descrition.getDOMNode().value.trim(),
+        };
+        ComponentStore.addItem(data);
+        ModalActions.destroy();
+
     },
     render: function() {
+        var classSet = "formSelection "+" "+this.props.type+" "+this.props.showForm;
         return (
-            <div className="modalSelection" role="dialog" aria-hidden="true">
-                <h2>Select your marketing weapon of choice</h2>
-                
-            </div>
+            <form className={classSet} method="post" onSubmit={this.addItem}>
+                <h2>Insert your component</h2>
+                <label className="el_link">Link</label>
+                <input type="text" ref="link" className="el_link" />
+
+                <label className="el_img">Image</label>
+                <input type="text" ref="img" className="el_img" />
+
+                <label className="el_title">Title</label>
+                <input type="text" ref="title" className="el_title" />
+
+                <label className="el_description">Description</label>
+                <input type="text" ref="descrition" className="el_description" />
+                <div className="modal-tools">
+                    <button type="submit"  className="btn">Insert</button>
+                </div>
+            </form>
         );
     }
 });

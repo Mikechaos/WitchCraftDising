@@ -17,7 +17,9 @@
  */
 
 var React = require('react');
-
+var Modal = require('../popups/PopupBase.react');
+var ModalSelection = require('../popups/ComponentSelection.react');
+var ModalActions = require('../../../actions/ModalActions.js');
 
 var GridItem = React.createClass({
 
@@ -44,7 +46,7 @@ var GridItem = React.createClass({
     }
 
     return (
-      <div style={borderStyle} onMouseEnter={this.setActive} onMouseLeave={this.setInactive}></div>
+      <div onClick={this.showSelection} style={borderStyle} onMouseEnter={this.setActive} onMouseLeave={this.setInactive}></div>
     );
   },
 
@@ -67,6 +69,14 @@ var GridItem = React.createClass({
     this.state.highlighted = true;
     this.forceUpdate();
   },
+
+  showSelection : function(e){
+    if(this.state.active){
+      e.preventDefault();
+      e.stopPropagation();
+      ModalActions.show({id:"ModalSelection"});      
+    }
+  }
 
 
 });

@@ -51,7 +51,6 @@ var Editor = React.createClass({
   componentWillMount: function () {
     this.state.width = $('#editor').width();
     GridStore.on('change:grid', _.bind(function (model, grid) {
-      console.log('test');
       this.setProps({grid: grid});
     }, this));
     this.initGrid();
