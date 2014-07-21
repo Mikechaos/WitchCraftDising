@@ -24,7 +24,6 @@ var GridRow = React.createClass({
 
   render: function() {
     var style = {
-      width: "inherit",
       height: 100 / this.props.rowCount + "%"
     }
     return (

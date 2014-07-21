@@ -33,21 +33,19 @@ var GridItem = React.createClass({
   },
 
   render: function() {
+
     borderStyle = {
-      border: "solid grey 1px",
       width: 100 / this.props.colCount + "%",
-      height: "100%",
-      display: "inline-block",
-      "float": "left",
-      "box-sizing": "border-box"
     };
 
+    classNames = 'grid-item';
+
     if (this.state.highlight) {
-      borderStyle.border = "solid pink 1px";
+      classNames += " highlight";
     }
 
     return (
-      <div onClick={this.showSelection} style={borderStyle} onMouseEnter={this.setActive} onMouseLeave={this.setInactive}></div>
+      <div className={classNames} onClick={this.showSelection} style={borderStyle} onMouseEnter={this.setActive} onMouseLeave={this.setInactive}></div>
     );
   },
 
