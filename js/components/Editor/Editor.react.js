@@ -88,7 +88,7 @@ var Editor = React.createClass({
     if (this.props.grid.length === 0) { var state = false; }
     else { var state = this.props.grid[this.rowElems.num][col]; }
 
-    row.push(<GridItem row={this.rowElems.num} col={col} key={"gridItem" + this.rowElems.num + "_" + col} highlight={state} colCount={this.colCount}/>);
+    row.push(<GridItem row={this.rowElems.num} col={col} key={"gridItem" + this.rowElems.num + "_" + col} highlight={state} colCount={this.colCount} rect={Gridstore.get('rect')} />);
 
     return this.buildRow(row, col + 1);
   },
